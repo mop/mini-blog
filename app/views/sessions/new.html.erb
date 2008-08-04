@@ -1,0 +1,13 @@
+<h2>Admin login</h2>
+
+<%= error_messages_for :session %>
+
+<form method="post" action="<%= url(:sessions) %>">
+  <label for="name" /> Name: </label>
+  <input type="text" id="user" name="user" />
+  <label for="password" /> Password: </label>
+  <input type="password" id="password" name="password" />
+  <input type="submit" />
+</form>
+
+<a href="<%= url(:entries) %>">Back</a>

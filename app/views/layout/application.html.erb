@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+  <head>
+    <title>Mini Blog | The Blogging-Software for Minimalists</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <%= css_include_tag :default %>
+    <%= css_include_tag :idle %>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="<%= url(:entries, :format => 'rss2') %>" />
+
+    <%= catch_content :head %>
+  </head>
+  <body>
+    <div id="frame">
+      <div id="header">
+      </div>
+      <div id="content">
+        <%= catch_content :for_layout %>
+      </div>
+      <div id="menu">
+        <ul>
+          <li style="padding: 0px;">
+            Me
+          </li>
+          <ul>
+            <li>
+              <a href="#">About</a>
+            </li>
+          </ul>
+          <li>
+            Blog
+          </li>
+          <ul>
+            <li>
+              <a href="<%= url(:entries) %>">Index</a>
+            </li>
+            <li>
+              <a href="<%= url(:entries, :format => 'rss2')%>">Feed</a>
+            </li>
+            <li>
+              <a href="<%= url(:entries) %>/archive">Archive</a>
+            </li>
+          </ul>
+          <li>
+            Projects
+          </li>
+          <ul>
+            <li>
+              <a href="#">Project 1</a>
+            </li>
+            <li>
+              <a href="#">Project 2</a>
+            </li>
+            <li>
+              <a href="#">Project 3</a>
+            </li>
+          </ul>
+          <% admin do %>
+          <li>
+            Admin
+          </li>
+          <ul>
+            <li>
+              <a href="<%= url(:new_entry) %>">New Entry</a>
+            </li>
+            <li>
+              <a href="<%= url(:sites) %>">Sites</a>
+            </li>
+            <li>
+              <a href="<%= url(:new_site) %>">New Site</a>
+            </li>
+            <li>
+              <a href="<%= url(:delete_session) %>" class="delete-noconfirm">Logout</a>
+            </li>
+          </ul>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </body>
+    <%= js_include_tag 'prototype' %>
+    <%= js_include_tag 'scriptaculous' %>
+    <%= catch_content :javascript %>
+    <%= js_include_tag 'application' %>
+</html>

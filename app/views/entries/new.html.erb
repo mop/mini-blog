@@ -1,0 +1,13 @@
+<h2>New Entry</h2>
+
+<%= error_messages_for :entry %>
+<% form_for(:entry, :action => url(:entries)) do %>
+  <%= partial 'form' %>
+  <div id="preview_div" style="display:none; width=100%; clear: both;"></div>
+  <div>
+    <%= submit_button 'Create' %>
+    <a href="#" id="preview" 
+      onclick="markdown_preview('<%= url(:markdown_preview) %>', 'entry_text', 'preview_div', this);"
+    >Preview </a>
+  </div>
+<% end %>

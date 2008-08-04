@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Mini Blog Feed</title>
+    <link>92.51.132.135/blog</link>
+    <description>Mini Blog | The Blogging Software for Minimalists</description>
+    <language>en-us</language>
+    <pubDate><%= @entries.first.created_at rescue Time.gm(2008) %></pubDate>
+    <lastBuildDate><%= @entries.first.created_at rescue Time.gm(2008) %></lastBuildDate>
+    <%- @entries.each do |entry| -%> 
+    <item>
+      <title><%= entry.title %></title>
+      <link>http://92.51.132.135/blog/entries/<%= entry.id %></link>
+      <description><![CDATA[
+        <%= entry.html_text %>
+      ]]></description>
+      <pubDate><%= entry.created_at %></pubDate>
+      <guid>http://92.51.132.135/blog/entries/<%= entry.id %></guid>
+    </item>
+    <%- end -%>
+  </channel>
+</rss>

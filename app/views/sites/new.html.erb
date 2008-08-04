@@ -1,0 +1,14 @@
+<h2>New Site</h2>
+
+<%= error_messages_for :site %>
+
+<% form_for(@site, :action => url(:sites)) do |f| %>
+  <%= partial 'form' %>
+  <div id="preview_div" style="display:none; width=100%; clear: both;"></div>
+  <div>
+    <%= submit_button "Create" %> |
+    <a href="#" id="preview" 
+      onclick="markdown_preview('<%= url(:markdown_preview) %>', 'site_text', 'preview_div', this);"
+    >Preview </a>
+  </div>
+<% end %>

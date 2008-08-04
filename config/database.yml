@@ -1,0 +1,14 @@
+---
+# This is a sample database file for the DataMapper ORM
+:development: &defaults
+  :adapter: sqlite3
+  :database: development.db
+
+:test:
+  <<: *defaults
+  :database: ':memory:'
+
+:production:
+  <<: *defaults
+  :database: production.db
+

@@ -1,0 +1,11 @@
+<i><%= entry.created_at.strftime("%m.%d.%Y %H:%M") %></i>
+<h2><a href="<%= url(:permalink_entry, entry) %>" id="entry_<%= entry.id %>"><%= entry.title %></a></h2>
+<div class="entry">
+  <%= entry.html_text %>
+  <% admin do %>
+    <span class="admin">
+      <a href="<%= url(:edit_entry, entry)%>">Edit</a> |
+      <a href="<%= url(:entry, entry)%>" class="delete">Destroy</a>
+    </span>
+  <% end %>
+</div>

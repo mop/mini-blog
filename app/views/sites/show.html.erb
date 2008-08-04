@@ -1,0 +1,8 @@
+<h2><%=h @site.title %></h2>
+
+<i><%= @site.created_at.strftime("%m.%d.%Y %H:%M") %></i>
+<%= @site.html_text %>
+
+<% admin do %>
+  <%= link_to 'Edit',  url(:edit_site,  @site) %>
+<% end %>

@@ -1,0 +1,20 @@
+<h2>Sites</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Created at</th>
+  </tr>
+
+  <% @sites.each do |site| %>
+  <tr>
+    <td><%=h site.title %></td>
+    <td><%=h site.created_at.strftime("%m.%d.%Y %H:%M") %></td>
+    <td><%= link_to 'Show', url(:site, site) %></td>
+    <td><%= link_to 'Edit', url(:edit_site,  site) %></td>
+    <td><%= link_to 'Delete', url(:site, site), :class => 'delete' %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New', url(:new_site) %>
