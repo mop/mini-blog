@@ -5,21 +5,8 @@ module ResourceHelper
       @klass = klass
     end
 
-    # Checks if the controller is resourceful. 
-    # It might take the following parameters as hash
-    # [auth_method] the method which is used to authenticate the user. It might
-    # be a method like :logged_in? or something similar.
-    # [auth_actions] an array of methods, which should be checked for
-    # authentication
-    def it_should_be_resourceful(params={})
-      auth_method = params[:auth_method] || :no_auth_method
-      auth_actions = params[:auth_actions] || []
-      self.class_eval <<-EOF
-        def auth_method
-          :#{auth_method}
-        end
-      EOF
-
+    # Specs for the index action of the controller
+    def index_specs(auth_actions)
       if auth_actions.include? :index
         describe controller_class, "unauthorized index action" do
           def do_get
@@ -62,7 +49,10 @@ module ResourceHelper
           do_get.should be_successful
         end
       end
+    end
 
+    # Specs for the show action of the controller
+    def show_specs(auth_actions)
       if auth_actions.include? :show 
         describe controller_class, "unauthorized show action" do
           def do_get
@@ -105,7 +95,10 @@ module ResourceHelper
           do_get.assigns(item_name).should eql(@item)
         end
       end
+    end
 
+    # Specs for the new action of the controller
+    def new_specs(auth_actions)
       if auth_actions.include? :new
         describe controller_class, 'new page' do
           def do_get
@@ -142,7 +135,10 @@ module ResourceHelper
           do_get
         end
       end
+    end
 
+    # Specs for the create action of the controller
+    def create_specs(auth_actions)
       if auth_actions.include? :create
         describe controller_class, 'unauthorized create' do
           def do_post(params={})
@@ -205,7 +201,10 @@ module ResourceHelper
           do_post.should be_successful
         end
       end
+    end
 
+    # Specs for the edit action of the controller
+    def edit_specs(auth_actions)
       if auth_actions.include? :edit
         describe controller_class, 'unauthorized edit' do
           def do_get
@@ -244,7 +243,10 @@ module ResourceHelper
           do_get.assigns(item_name).should eql(:edit)
         end
       end
+    end
 
+    # Specs for the update action of the controller
+    def update_specs(auth_actions)
       if auth_actions.include? :update
         describe controller_class, 'unauthorized update' do
           def do_post(params={})
@@ -312,7 +314,10 @@ module ResourceHelper
           do_post.should be_successful
         end
       end
-
+    end
+    
+    # Specs for the destory action of the controller
+    def destroy_specs(auth_actions)
       if auth_actions.include? :destroy
         describe controller_class, 'unauthorized destroy' do
           def do_post
@@ -361,6 +366,30 @@ module ResourceHelper
           do_post.should redirect_to("#{path_prefix}/#{items_name}")
         end
       end
+    end
+
+    # Checks if the controller is resourceful. 
+    # It might take the following parameters as hash
+    # [auth_method] the method which is used to authenticate the user. It might
+    # be a method like :logged_in? or something similar.
+    # [auth_actions] an array of methods, which should be checked for
+    # authentication
+    def it_should_be_resourceful(params={})
+      auth_method = params[:auth_method] || :no_auth_method
+      auth_actions = params[:auth_actions] || []
+      self.class_eval <<-EOF
+        def auth_method
+          :#{auth_method}
+        end
+      EOF
+
+      index_specs(auth_actions)
+      show_specs(auth_actions)
+      new_specs(auth_actions)
+      create_specs(auth_actions)
+      edit_specs(auth_actions)
+      update_specs(auth_actions)
+      destroy_specs(auth_actions)
     end
   end
 

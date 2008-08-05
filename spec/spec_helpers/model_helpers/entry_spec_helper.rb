@@ -1,5 +1,5 @@
 module EntrySpecHelper
-  module EntrySpecHelperGroupMethods
+  module EntrySpecGroupMethods
     def model_class
       Entry
     end
@@ -32,13 +32,13 @@ module EntrySpecHelper
       }.merge(params)
     end
   end
-  module EntrySpecHelperMethods
+  module EntrySpecMethods
   end
 
   def self.included(klass)
-    klass.extend(EntrySpecHelperGroupMethods)
-    klass.send(:include, EntrySpecHelperGroupMethods)
-    klass.send(:include, EntrySpecHelperMethods)
+    klass.extend(EntrySpecGroupMethods)
+    klass.send(:include, EntrySpecGroupMethods)
+    klass.send(:include, EntrySpecMethods)
   end
 end
 

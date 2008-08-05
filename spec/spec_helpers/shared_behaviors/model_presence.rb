@@ -9,6 +9,7 @@ module ValidationHelper
       end
     end
 
+    # TODO: Refactor this
     def it_should_validate_required
       required_fields.each do |field|
         it "should not be valid without #{field}" do
@@ -35,6 +36,76 @@ module ValidationHelper
           dupl.should_not be_valid
         end
       end
+    end
+
+    def it_should_belong_to(klass)
+      inject_belongs_to_attribute(klass)
+      create_belongs_to_spec(klass)
+    end
+    
+    # Some meta-magic which creates the code
+    def create_belongs_to_spec(klass)
+      eval <<-EOF
+      describe "belongs to #{klass}" do
+        before(:each) do
+          @belongs_to_model = #{klass}_meta.model_class.new(
+            #{klass}_meta.valid_attributes
+          )
+          @belongs_to_model.save
+        end
+
+        after(:each) do
+          @belongs_to_model.destroy
+        end
+        
+        it "should create a valid #{klass} model" do
+          @belongs_to_model.should be_valid
+        end
+
+        it 'should be able to assign the model' do
+          my_model = model_class.create(valid_attributes)
+          my_model.send(
+            "\#\{#{klass}_meta.attribute_name\}=",
+            @belongs_to_model
+          )
+          my_model.save
+          my_model.send(
+            #{klass}_meta.attribute_name
+          ).should eql(@belongs_to_model)
+        end
+      end
+      EOF
+    end
+
+    # This method injects a meta-object as a klass_meta 
+    # method into the test-class-code
+    def inject_belongs_to_attribute(klass)
+      name = klass.to_s.capitalize
+      mod = Kernel.const_get(
+        "#{name}SpecHelper"
+      )
+      belonger = Class.new.send(:include, mod)
+      belonger.instance_eval <<-EOF
+        def attribute_name
+          :#{klass}
+        end
+      EOF
+
+      # unfortunately, there is no class_variable_set-method :(
+      self.send(:eval, <<-EOF
+        @@#{klass}_meta = belonger
+      EOF
+      )
+
+      # Inject it to the instance methods so that we can use
+      # it in our tests
+      ValidationHelperMethods.module_eval <<-code
+        def #{klass}_meta
+          ValidationHelperGroupMethods.send(
+            :class_variable_get, :@@#{klass}_meta
+          )
+        end
+      code
     end
   end
 
