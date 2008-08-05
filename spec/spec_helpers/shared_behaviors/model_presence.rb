@@ -38,8 +38,60 @@ module ValidationHelper
       end
     end
 
+    def it_should_have_many(klass)
+      inject_meta_attribute(klass)
+      create_has_many_spec(klass)
+    end
+
+    # TODO: Refactor this
+    def create_has_many_spec(klass)
+      eval <<-EOF
+      describe "has many #{klass}" do
+        before(:each) do
+          @item = model_class.create(valid_attributes)
+        end
+
+        after(:each) do
+          @item.destroy
+        end
+
+        it 'should have 0 children' do
+          @item.send("#{klass}").size.should eql(0)
+        end
+
+        describe 'when adding a children' do
+          before(:each) do
+            @child = #{klass}_meta.model_class.create(
+              #{klass}_meta.valid_attributes
+            )
+            @item.send("#{klass}") << @child
+          end
+          
+          after(:each) do
+            @child.destroy if @child
+          end
+
+          it 'should have 1 children' do
+            @item.send("#{klass}").size.should eql(1)
+          end
+
+          it 'should return the children as first element' do
+            @item.send("#{klass}").first.should eql(@child)
+          end
+
+          it 'should have 0 children after destroying the child' do
+            @child.destroy
+            @child = nil
+            @item.reload
+            @item.send("#{klass}").size.should eql(0)
+          end
+        end
+      end
+      EOF
+    end
+
     def it_should_belong_to(klass)
-      inject_belongs_to_attribute(klass)
+      inject_meta_attribute(klass)
       create_belongs_to_spec(klass)
     end
     
@@ -77,19 +129,24 @@ module ValidationHelper
       EOF
     end
 
-    # This method injects a meta-object as a klass_meta 
-    # method into the test-class-code
-    def inject_belongs_to_attribute(klass)
-      name = klass.to_s.capitalize
+    def meta_class(sym)
+      name = sym.to_s.singularize.to_const_string
       mod = Kernel.const_get(
         "#{name}SpecHelper"
       )
-      belonger = Class.new.send(:include, mod)
-      belonger.instance_eval <<-EOF
+      klass = Class.new.send(:include, mod)
+      klass.instance_eval <<-EOF
         def attribute_name
-          :#{klass}
+          :#{sym}
         end
       EOF
+      klass
+    end
+
+    # This method injects a meta-object as a klass_meta 
+    # method into the test-class-code
+    def inject_meta_attribute(klass)
+      belonger = meta_class(klass)
 
       # unfortunately, there is no class_variable_set-method :(
       self.send(:eval, <<-EOF

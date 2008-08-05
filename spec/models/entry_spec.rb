@@ -19,6 +19,7 @@ describe "A new entry" do
   it_should_cache_markdown(:text, :html_text)
   it_should_create_permalinks_on :title
   it_should_verify_uniqueness_of :title => 'test'
+  it_should_have_many :entries
 end
 
 describe Entry, '#group_for_archive' do

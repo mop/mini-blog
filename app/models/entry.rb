@@ -14,6 +14,8 @@ class Entry
   property :created_at,    DateTime, :nullable => false
   property :permalink,     String
 
+  has n, :entries
+
   validates_is_unique :title
 
   def self.group_for_archive

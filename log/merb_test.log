@@ -10490,3 +10490,1073 @@ Tue, 05 Aug 2008 07:20:00 GMT  ~  info  ~  Logfile created
  ~ {:action_time=>0.000486, :after_filters_time=>1.7e-05, :before_filters_time=>3.2e-05}
  ~ Cookie set: _session_id => 8e85bcf1c8bf59588e4f49b2106b926d -- {"path"=>"/"}
  ~ {:action_time=>0.000466, :after_filters_time=>1.7e-05, :before_filters_time=>3.0e-05}
+ ~ Loaded TEST Environment...
+ ~ loading gem 'merb_helpers' ...
+ ~ loading gem 'merb-assets' ...
+ ~ loading gem 'merb_stories' ...
+ ~ loading gem 'maruku' ...
+ ~ loading gem 'dm-validations' ...
+ ~ Connecting to database...
+ ~ loading gem 'merb_datamapper' ...
+ ~ Compiling routes...
+ ~ Using in-memory sessions; sessions will be lost whenever the server stops.
+ ~ Cookie set: _session_id => 89bdd18a0e8bb1fe6e572e2bc5db267d -- {"path"=>"/"}
+ ~ {:action_time=>0.001662, :after_filters_time=>1.6e-05, :before_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 6f59df57d653d5dc2f14485665bab4f8 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.00081, :after_filters_time=>1.7e-05, :before_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 1af74a88b1a602f9c5c61dc16b6e62cb -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000805, :after_filters_time=>1.8e-05, :before_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 1b735ee6607266b8085c1bef68988583 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000713, :after_filters_time=>1.6e-05, :before_filters_time=>1.7e-05}
+ ~ Cookie set: _session_id => f3a69ab25c6c0ec3366f21dcfcddda13 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000674, :after_filters_time=>1.5e-05, :before_filters_time=>1.7e-05}
+ ~ Cookie set: _session_id => 30f07cf256894f0177fd40f9abd927b7 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000638, :after_filters_time=>1.8e-05, :before_filters_time=>1.8e-05}
+ ~ Cookie set: _session_id => 26510aa390104a887ce9c6b6368a5cb6 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000527, :after_filters_time=>1.5e-05, :before_filters_time=>1.7e-05}
+ ~ Cookie set: _session_id => 65d17b4994cd3410c2d6fc8b7b0b4342 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000889, :after_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => 84e90e4b101b6e470f7cabf27c454720 -- {"path"=>"/"}
+ ~ {:action_time=>0.003162, :after_filters_time=>1.6e-05, :before_filters_time=>8.6e-05}
+ ~ Cookie set: _session_id => 53e1f94fa80e588e7f4339a2e5db14f4 -- {"path"=>"/"}
+ ~ {:action_time=>0.002965, :after_filters_time=>1.6e-05, :before_filters_time=>7.8e-05}
+ ~ Cookie set: _session_id => 43d7fcb284ab624c9c8bce14cfa7fd69 -- {"path"=>"/"}
+ ~ {:action_time=>0.002996, :after_filters_time=>1.7e-05, :before_filters_time=>7.8e-05}
+ ~ Cookie set: _session_id => 192e3d3523a11cf0bad5924f6c686d25 -- {"path"=>"/"}
+ ~ {:action_time=>1.08206, :after_filters_time=>1.6e-05, :before_filters_time=>8.7e-05}
+ ~ Cookie set: _session_id => 20e64e281a68c8d80f1f82a0ad8607ae -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000841, :after_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => c8c463d68607efb32a2bfa44e6862106 -- {"path"=>"/"}
+ ~ {:action_time=>0.000478, :after_filters_time=>1.5e-05, :before_filters_time=>8.2e-05}
+ ~ Cookie set: _session_id => 0cd9f390f1e295b0e6139f60dc8b4961 -- {"path"=>"/"}
+ ~ {:action_time=>0.000465, :after_filters_time=>1.5e-05, :before_filters_time=>7.7e-05}
+ ~ Cookie set: _session_id => e295fb6ce293e54ba939347da1a8cf9a -- {"path"=>"/"}
+ ~ {:action_time=>0.000436, :after_filters_time=>1.4e-05, :before_filters_time=>7.1e-05}
+ ~ Cookie set: _session_id => 08a65a25fd2a90544de4522b00dc1e53 -- {"path"=>"/"}
+ ~ {:action_time=>0.000579, :after_filters_time=>1.6e-05, :before_filters_time=>2.6e-05}
+ ~ Cookie set: _session_id => e911cc03dae12b0de46b64d7ddd1893d -- {"path"=>"/"}
+ ~ {:action_time=>0.000543, :after_filters_time=>1.4e-05, :before_filters_time=>2.4e-05}
+ ~ Cookie set: _session_id => a467006e8c9018f0560624917fa41269 -- {"path"=>"/"}
+ ~ {:action_time=>0.000579, :after_filters_time=>1.4e-05, :before_filters_time=>2.6e-05}
+ ~ Cookie set: _session_id => 37aa8517f271d231c7f0fe4f49363974 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000574, :after_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => aa5d5527cf097654176066bbb8218f90 -- {"path"=>"/"}
+ ~ {:action_time=>0.000576, :after_filters_time=>1.5e-05, :before_filters_time=>8.1e-05}
+ ~ Cookie set: _session_id => cd92d6c69d9cbe5f10510b830d4a478e -- {"path"=>"/"}
+ ~ {:action_time=>0.000441, :after_filters_time=>1.5e-05, :before_filters_time=>7.2e-05}
+ ~ Cookie set: _session_id => 48cdd045b92e08e22a26e20fe16abbc7 -- {"path"=>"/"}
+ ~ {:action_time=>0.000425, :after_filters_time=>1.4e-05, :before_filters_time=>7.1e-05}
+ ~ Cookie set: _session_id => daa7b6cdd1ad375711035e2e00ccd414 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000796, :after_filters_time=>1.5e-05}
+ ~ Cookie set: _session_id => 9221433f504c5190d15312e68426e6dd -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/
+ ~ {:action_time=>0.000953, :after_filters_time=>1.5e-05, :before_filters_time=>8.1e-05}
+ ~ Cookie set: _session_id => b96fe2acad93b6d68d9afe4531fd3bed -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/
+ ~ {:action_time=>0.000928, :after_filters_time=>1.5e-05, :before_filters_time=>8.1e-05}
+ ~ Cookie set: _session_id => 0282d3b8bf13484483072df4d88ddb13 -- {"path"=>"/"}
+ ~ {:action_time=>0.000791, :after_filters_time=>1.4e-05, :before_filters_time=>7.6e-05}
+ ~ Cookie set: _session_id => 5dec9e198f59fb3bb3826ffa97de20fa -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000639, :after_filters_time=>1.5e-05}
+ ~ Cookie set: _session_id => 5d1b81c6ab4ca5360bdd2045a3153322 -- {"path"=>"/"}
+ ~ {:action_time=>0.000613, :after_filters_time=>1.5e-05, :before_filters_time=>8.0e-05}
+ ~ Cookie set: _session_id => 04b5daa48e731822f1cc73feb1a2573a -- {"path"=>"/"}
+ ~ {:action_time=>0.000627, :after_filters_time=>1.5e-05, :before_filters_time=>7.9e-05}
+ ~ Cookie set: _session_id => 40f84ac05e34b20a39bb2a1207bda6b9 -- {"path"=>"/"}
+ ~ {:action_time=>0.000564, :after_filters_time=>1.4e-05, :before_filters_time=>7.2e-05}
+ ~ Cookie set: _session_id => 8095d43dc07da49bd5f9c2f5b1b14c1e -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.00085, :after_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => 8954fd3667751ecd6bb25c34feaa8805 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/1
+ ~ {:action_time=>0.000983, :after_filters_time=>1.5e-05, :before_filters_time=>8.2e-05}
+ ~ Cookie set: _session_id => ff76daeeadc7d7316d2ae7f96422cd1f -- {"path"=>"/"}
+ ~ {:action_time=>0.000855, :after_filters_time=>1.5e-05, :before_filters_time=>7.7e-05}
+ ~ Cookie set: _session_id => e22e9a047bfe53900dcb8f7b49737ffe -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/1
+ ~ {:action_time=>0.00096, :after_filters_time=>1.4e-05, :before_filters_time=>7.4e-05}
+ ~ Cookie set: _session_id => 39bd921d3883cd784cfe9647b5ae585c -- {"path"=>"/"}
+ ~ {:action_time=>0.000809, :after_filters_time=>1.5e-05, :before_filters_time=>7.3e-05}
+ ~ Cookie set: _session_id => c2b9f2f0b48dff051fd497c3c7ec997d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000607, :after_filters_time=>1.5e-05}
+ ~ Cookie set: _session_id => e85978451c663fb8f4e420a93c6a58fb -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.001941, :after_filters_time=>1.5e-05, :before_filters_time=>8.9e-05}
+ ~ Cookie set: _session_id => d50292f448274725b8fd0726fb638946 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000659, :after_filters_time=>1.5e-05, :before_filters_time=>7.3e-05}
+ ~ Cookie set: _session_id => b4d85a1fe9ebcbea01e37aee9891454a -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.00066, :after_filters_time=>1.5e-05, :before_filters_time=>7.2e-05}
+ ~ Cookie set: _session_id => 583a6e384ec340a51976b56c629b4efb -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000662, :after_filters_time=>1.5e-05, :before_filters_time=>7.5e-05}
+ ~ Cookie set: _session_id => cb6e1616fb0e3e9542b4dd7fcf1f7ff2 -- {"path"=>"/"}
+ ~ {:action_time=>0.000651, :after_filters_time=>1.6e-05, :before_filters_time=>2.8e-05}
+ ~ Cookie set: _session_id => 0860dae8c006d0dd89ad4ba285aeccb9 -- {"path"=>"/"}
+ ~ {:action_time=>0.000568, :after_filters_time=>1.5e-05, :before_filters_time=>2.5e-05}
+ ~ Cookie set: _session_id => e1a3ad7a6131d7920098309ef482fa7b -- {"path"=>"/"}
+ ~ {:action_time=>0.000555, :after_filters_time=>1.5e-05, :before_filters_time=>2.5e-05}
+ ~ Cookie set: _session_id => 4256d467c0c649a063fd89c0b71ebe4a -- {"path"=>"/"}
+ ~ {:action_time=>0.000841, :after_filters_time=>1.7e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => 2ac7abd09bbf016270a1f83ee2d99f56 -- {"path"=>"/"}
+ ~ {:action_time=>0.000656, :after_filters_time=>1.7e-05, :before_filters_time=>2.9e-05}
+ ~ Cookie set: _session_id => 90b5791d5972ecf2c21a9c4b41b879f3 -- {"path"=>"/"}
+ ~ {:action_time=>0.000489, :after_filters_time=>1.7e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => 2f00a03bd9f2cc500b04104a34cea6c3 -- {"path"=>"/"}
+ ~ {:action_time=>0.000688, :after_filters_time=>1.8e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 81c4a51e0d3087d43f7e0e38a60e688b -- {"path"=>"/"}
+ ~ {:action_time=>0.000628, :after_filters_time=>1.8e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => a8ee823ac17e0cbc639215839dd30c7d -- {"path"=>"/"}
+ ~ {:action_time=>0.000625, :after_filters_time=>1.8e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => 666f7a0d75208c33a0cd842fcd8c516c -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000793, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => b53fe372b6a6e9396aed1f863a5f7e05 -- {"path"=>"/"}
+ ~ {:action_time=>0.000706, :after_filters_time=>2.0e-05, :before_filters_time=>0.000102}
+ ~ Cookie set: _session_id => 702d8e2ab8ebf290f0942a1afae9e77f -- {"path"=>"/"}
+ ~ {:action_time=>0.000541, :after_filters_time=>1.7e-05, :before_filters_time=>9.0e-05}
+ ~ Cookie set: _session_id => 40e90d13fa064357bc68c63fd6546f19 -- {"path"=>"/"}
+ ~ {:action_time=>0.000504, :after_filters_time=>1.7e-05, :before_filters_time=>8.8e-05}
+ ~ Cookie set: _session_id => 27cbf0ae0aee5012cf204131979400e6 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000983, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 8236bd5761fe9c4fdb418d25114b3341 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/
+ ~ {:action_time=>0.001198, :after_filters_time=>1.9e-05, :before_filters_time=>0.000101}
+ ~ Cookie set: _session_id => b04538b3c295f371584bd139f97430f6 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/
+ ~ {:action_time=>0.00104, :after_filters_time=>1.8e-05, :before_filters_time=>8.8e-05}
+ ~ Cookie set: _session_id => 47aca092db16a5931e97a7db49d96c0d -- {"path"=>"/"}
+ ~ {:action_time=>0.000941, :after_filters_time=>1.8e-05, :before_filters_time=>8.8e-05}
+ ~ Cookie set: _session_id => 96ddd9fb3b9df014b35955f3e22bc398 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000763, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 184d1b94a2033b33e1c4276a786f98cc -- {"path"=>"/"}
+ ~ {:action_time=>0.000762, :after_filters_time=>1.9e-05, :before_filters_time=>0.000102}
+ ~ Cookie set: _session_id => d70e53806facf322ce208286cc12ada4 -- {"path"=>"/"}
+ ~ {:action_time=>0.000696, :after_filters_time=>1.8e-05, :before_filters_time=>8.8e-05}
+ ~ Cookie set: _session_id => 6ae34c23b91d99d7eadb26754f8e5136 -- {"path"=>"/"}
+ ~ {:action_time=>0.000669, :after_filters_time=>1.8e-05, :before_filters_time=>8.6e-05}
+ ~ Cookie set: _session_id => 4975ecff7a87b84fc664e3a7122af98f -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001063, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 010008c03ee8029e4110a9bbd6d5c5e0 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/1
+ ~ {:action_time=>0.001217, :after_filters_time=>2.2e-05, :before_filters_time=>0.000101}
+ ~ Cookie set: _session_id => d2d381f3ec5e09004b4a6d43c322b349 -- {"path"=>"/"}
+ ~ {:action_time=>0.0013, :after_filters_time=>2.0e-05, :before_filters_time=>9.6e-05}
+ ~ Cookie set: _session_id => 9ef1cf9608ba83b47afeec1cff90b232 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/1
+ ~ {:action_time=>0.00119, :after_filters_time=>1.8e-05, :before_filters_time=>9.3e-05}
+ ~ Cookie set: _session_id => dd8ba05abcd5603c5d58b4a9ebcedbd1 -- {"path"=>"/"}
+ ~ {:action_time=>0.001028, :after_filters_time=>1.8e-05, :before_filters_time=>9.1e-05}
+ ~ Cookie set: _session_id => c9478268fcafb068f9becfad369db182 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001409, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => b2504e5bbfedc31672c40fd4f970ad6e -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000934, :after_filters_time=>2.0e-05, :before_filters_time=>0.000102}
+ ~ Cookie set: _session_id => 48b8c653ec6f26cfafe62e38db42030f -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000904, :after_filters_time=>1.8e-05, :before_filters_time=>9.6e-05}
+ ~ Cookie set: _session_id => 1a44d91ff6091a0eeee6075abdb8299d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.00083, :after_filters_time=>1.8e-05, :before_filters_time=>8.8e-05}
+ ~ Cookie set: _session_id => 34332f0242527179fb4e21e261a70592 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000842, :after_filters_time=>1.8e-05, :before_filters_time=>8.9e-05}
+ ~ Cookie set: _session_id => 60447b8062f06366ee55a7c53b4e484c -- {"path"=>"/"}
+ ~ {:action_time=>0.000583, :after_filters_time=>1.8e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 7daa8738673c04ecac63d068a034cf6a -- {"path"=>"/"}
+ ~ {:action_time=>0.00064, :after_filters_time=>1.9e-05, :before_filters_time=>3.5e-05}
+ ~ Cookie set: _session_id => 5f9abef12fde2197dda0fe51474437e3 -- {"path"=>"/"}
+ ~ {:action_time=>0.000613, :after_filters_time=>1.8e-05, :before_filters_time=>3.5e-05}
+ ~ Cookie set: _session_id => 9e2f4c8426d56e4e5c4d0e33269ed629 -- {"path"=>"/"}
+ ~ {:action_time=>0.001242, :after_filters_time=>2.3e-05, :before_filters_time=>4.7e-05}
+ ~ Cookie set: _session_id => c37aee56569c72e201700b6c1ec82442 -- {"path"=>"/"}
+ ~ {:action_time=>0.001146, :after_filters_time=>2.1e-05, :before_filters_time=>4.4e-05}
+ ~ Cookie set: _session_id => 9afbf201dde8def497fc2d8e8722fff0 -- {"path"=>"/"}
+ ~ {:action_time=>0.000898, :after_filters_time=>2.0e-05, :before_filters_time=>3.7e-05}
+ ~ Cookie set: _session_id => ffd0155bc4cd961cbaef5067ae4175eb -- {"path"=>"/"}
+ ~ {:action_time=>0.000864, :after_filters_time=>2.0e-05, :before_filters_time=>3.5e-05}
+ ~ Cookie set: _session_id => aacadd14311fd1a6b86280805589f9bc -- {"path"=>"/"}
+ ~ {:action_time=>0.000637, :after_filters_time=>1.8e-05, :before_filters_time=>3.6e-05}
+ ~ Cookie set: _session_id => 7cd3be8d44562b14400243e95ce75a5a -- {"path"=>"/"}
+ ~ {:action_time=>0.000554, :after_filters_time=>1.7e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => c8dea430d6f5fd6506ebf6a23a7ca9ae -- {"path"=>"/"}
+ ~ {:action_time=>0.000585, :after_filters_time=>1.8e-05, :before_filters_time=>3.4e-05}
+ ~ Cookie set: _session_id => 48aa7b79bd9b754465a90822c36566fb -- {"path"=>"/"}
+ ~ {:action_time=>0.000553, :after_filters_time=>1.9e-05, :before_filters_time=>3.4e-05}
+ ~ Loaded TEST Environment...
+ ~ loading gem 'merb_helpers' ...
+ ~ loading gem 'merb-assets' ...
+ ~ loading gem 'merb_stories' ...
+ ~ loading gem 'maruku' ...
+ ~ loading gem 'dm-validations' ...
+ ~ Connecting to database...
+ ~ loading gem 'merb_datamapper' ...
+ ~ Compiling routes...
+ ~ Using in-memory sessions; sessions will be lost whenever the server stops.
+ ~ Cookie set: _session_id => ceafdc02dc7f2c73b2e0aa14b44f22ec -- {"path"=>"/"}
+ ~ {:action_time=>0.00168, :after_filters_time=>1.5e-05, :before_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 684decdca033d4b9ec21440bbcc81724 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000745, :after_filters_time=>1.6e-05, :before_filters_time=>1.8e-05}
+ ~ Cookie set: _session_id => 499934d181aaeea8ba02e8cd0f99afac -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000735, :after_filters_time=>1.5e-05, :before_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 714901b17e6493ca653f4b0320403458 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000697, :after_filters_time=>1.5e-05, :before_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => 43f5e9dd6cdc37ca24e0cb78558e7623 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000676, :after_filters_time=>1.6e-05, :before_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => b42a5b856a8ef407335f5c9acdbd84f6 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000626, :after_filters_time=>1.5e-05, :before_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 7a750d7d40d09b2055ca91c62dde3377 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000514, :after_filters_time=>1.5e-05, :before_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => 471261e2aa57ec1f8476d9da5549ab90 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000933, :after_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => b1847b5eaa9fa1df7d744d3ec7c3f74c -- {"path"=>"/"}
+ ~ {:action_time=>0.003101, :after_filters_time=>1.8e-05, :before_filters_time=>8.4e-05}
+ ~ Cookie set: _session_id => d53808d53528a16ab9c9a59070df1c01 -- {"path"=>"/"}
+ ~ {:action_time=>0.00302, :after_filters_time=>1.7e-05, :before_filters_time=>8.4e-05}
+ ~ Cookie set: _session_id => 2bb686e1e97730008bf3707c0ae78dec -- {"path"=>"/"}
+ ~ {:action_time=>0.002898, :after_filters_time=>1.8e-05, :before_filters_time=>7.6e-05}
+ ~ Cookie set: _session_id => 6836ddf202668c720e16f61a1c271751 -- {"path"=>"/"}
+ ~ {:action_time=>1.061379, :after_filters_time=>1.7e-05, :before_filters_time=>7.8e-05}
+ ~ Cookie set: _session_id => 2bcad0b19939cc7c44efb57eea8ba4a8 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000844, :after_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => a5dd6c7cb1865327dffa73f5332f24a6 -- {"path"=>"/"}
+ ~ {:action_time=>0.000482, :after_filters_time=>1.5e-05, :before_filters_time=>8.4e-05}
+ ~ Cookie set: _session_id => 9a69b25645c42613d18e69738feb4506 -- {"path"=>"/"}
+ ~ {:action_time=>0.00045, :after_filters_time=>1.5e-05, :before_filters_time=>7.3e-05}
+ ~ Cookie set: _session_id => 08ce0f9c0571fe83712b802df9559364 -- {"path"=>"/"}
+ ~ {:action_time=>0.000435, :after_filters_time=>1.4e-05, :before_filters_time=>7.4e-05}
+ ~ Cookie set: _session_id => 3f96063278ad32fcf4c9fafc2a670351 -- {"path"=>"/"}
+ ~ {:action_time=>0.000576, :after_filters_time=>1.5e-05, :before_filters_time=>2.8e-05}
+ ~ Cookie set: _session_id => 472fdc257625882ac03ae4e3727fecf7 -- {"path"=>"/"}
+ ~ {:action_time=>0.000567, :after_filters_time=>1.4e-05, :before_filters_time=>2.6e-05}
+ ~ Cookie set: _session_id => 9a3099cb60fd53537b35c2504d08fbdf -- {"path"=>"/"}
+ ~ {:action_time=>0.000533, :after_filters_time=>1.4e-05, :before_filters_time=>2.5e-05}
+ ~ Cookie set: _session_id => 59998d247f2567096b6d1d4a9860a3c5 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000601, :after_filters_time=>1.5e-05}
+ ~ Cookie set: _session_id => 10815d57f64249807b535911b01f3a01 -- {"path"=>"/"}
+ ~ {:action_time=>0.000575, :after_filters_time=>1.6e-05, :before_filters_time=>8.2e-05}
+ ~ Cookie set: _session_id => 12a3b336cf730b4bbd03d05544e63b36 -- {"path"=>"/"}
+ ~ {:action_time=>0.000465, :after_filters_time=>1.4e-05, :before_filters_time=>7.4e-05}
+ ~ Cookie set: _session_id => e3fe7d8b4c2a2f7a53f46cd644df201e -- {"path"=>"/"}
+ ~ {:action_time=>0.000428, :after_filters_time=>1.4e-05, :before_filters_time=>7.3e-05}
+ ~ Cookie set: _session_id => c9824158df2d4b9fe6ed9a99c4826979 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.00083, :after_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => 70942433bd4b0d619c674f0236737399 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/
+ ~ {:action_time=>0.001027, :after_filters_time=>1.5e-05, :before_filters_time=>9.0e-05}
+ ~ Cookie set: _session_id => c5995ec2e9e6448ba429899625fb44c2 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/
+ ~ {:action_time=>0.001032, :after_filters_time=>1.5e-05, :before_filters_time=>8.1e-05}
+ ~ Cookie set: _session_id => 0c3fb3f3a9723243f09ea39751ba1130 -- {"path"=>"/"}
+ ~ {:action_time=>0.000772, :after_filters_time=>1.5e-05, :before_filters_time=>7.5e-05}
+ ~ Cookie set: _session_id => 913851a20f1c7983e6831eae9716405e -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.00062, :after_filters_time=>2.5e-05}
+ ~ Cookie set: _session_id => 897fe12ba06204c8e9c0fca997420b30 -- {"path"=>"/"}
+ ~ {:action_time=>0.000635, :after_filters_time=>1.5e-05, :before_filters_time=>8.1e-05}
+ ~ Cookie set: _session_id => 22446a85ea593f150aeb4e99a39c198d -- {"path"=>"/"}
+ ~ {:action_time=>0.000576, :after_filters_time=>1.4e-05, :before_filters_time=>7.4e-05}
+ ~ Cookie set: _session_id => d3ff8af4308738afb9f49a2f285292fe -- {"path"=>"/"}
+ ~ {:action_time=>0.000716, :after_filters_time=>1.4e-05, :before_filters_time=>7.3e-05}
+ ~ Cookie set: _session_id => 0d0fe339599fe51d7c6412b996337392 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000811, :after_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => 4693aef4eb0825669ef6665861c0f811 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/1
+ ~ {:action_time=>0.000993, :after_filters_time=>1.6e-05, :before_filters_time=>8.2e-05}
+ ~ Cookie set: _session_id => 789c6c91a9d1b5bcae47fcf90ede265a -- {"path"=>"/"}
+ ~ {:action_time=>0.000852, :after_filters_time=>1.6e-05, :before_filters_time=>7.6e-05}
+ ~ Cookie set: _session_id => fd84ed798479fff3ca0377b43b979883 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/1
+ ~ {:action_time=>0.00101, :after_filters_time=>1.7e-05, :before_filters_time=>8.5e-05}
+ ~ Cookie set: _session_id => 63a7c13735501747edfbbf5c4e733c01 -- {"path"=>"/"}
+ ~ {:action_time=>0.000821, :after_filters_time=>1.5e-05, :before_filters_time=>7.8e-05}
+ ~ Cookie set: _session_id => 992615f90955641dd092f57263b2a07e -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000609, :after_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => 4fe34d6aeec786af47c692fc4b7d73b2 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000755, :after_filters_time=>1.6e-05, :before_filters_time=>8.3e-05}
+ ~ Cookie set: _session_id => dd59b65fc378e2665f3f3dca63fb9f43 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000666, :after_filters_time=>1.5e-05, :before_filters_time=>7.5e-05}
+ ~ Cookie set: _session_id => e042d8561e3fa08c3aee247b0b8cba91 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000671, :after_filters_time=>1.5e-05, :before_filters_time=>7.5e-05}
+ ~ Cookie set: _session_id => 3c278773eebf6874f4ab5ad88de10246 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000652, :after_filters_time=>1.6e-05, :before_filters_time=>7.4e-05}
+ ~ Cookie set: _session_id => c64aad1d440d4ffc13dbc14e0196f87c -- {"path"=>"/"}
+ ~ {:action_time=>0.000669, :after_filters_time=>1.6e-05, :before_filters_time=>2.8e-05}
+ ~ Cookie set: _session_id => f9e1bfaf155438229e50abc95fd8e9c7 -- {"path"=>"/"}
+ ~ {:action_time=>0.000574, :after_filters_time=>1.5e-05, :before_filters_time=>2.6e-05}
+ ~ Cookie set: _session_id => 9d6b11b58e7c15f768beb808a9092959 -- {"path"=>"/"}
+ ~ {:action_time=>0.001691, :after_filters_time=>1.5e-05, :before_filters_time=>2.8e-05}
+ ~ Cookie set: _session_id => f8455adbd86f375a27a771f6661c843c -- {"path"=>"/"}
+ ~ {:action_time=>0.000837, :after_filters_time=>1.8e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => 589967f9dfcfe672868c667b8274f105 -- {"path"=>"/"}
+ ~ {:action_time=>0.0005, :after_filters_time=>1.8e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => c015e09f6c2cb7b6e32423bf19b9631f -- {"path"=>"/"}
+ ~ {:action_time=>0.000493, :after_filters_time=>1.8e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => fda48a5e2f261effd2c3db9526b84659 -- {"path"=>"/"}
+ ~ {:action_time=>0.000703, :after_filters_time=>2.1e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 03b695d6ddc1af946cecfeaf2fe0cea8 -- {"path"=>"/"}
+ ~ {:action_time=>0.000681, :after_filters_time=>1.9e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 37dcf9f2de9ce2bfa3c900995df9be37 -- {"path"=>"/"}
+ ~ {:action_time=>0.000688, :after_filters_time=>2.0e-05, :before_filters_time=>3.5e-05}
+ ~ Cookie set: _session_id => 43875b3bfbbdb66a859fca2578a886f3 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000747, :after_filters_time=>2.1e-05}
+ ~ Cookie set: _session_id => eb3428193591152a538fe1e1fba86410 -- {"path"=>"/"}
+ ~ {:action_time=>0.000747, :after_filters_time=>1.8e-05, :before_filters_time=>0.000108}
+ ~ Cookie set: _session_id => a8c71701df4e9ccc0c4aa0f02551be89 -- {"path"=>"/"}
+ ~ {:action_time=>0.000586, :after_filters_time=>1.8e-05, :before_filters_time=>9.9e-05}
+ ~ Cookie set: _session_id => d693653b9648a0a7618cf31c6d6cb9a7 -- {"path"=>"/"}
+ ~ {:action_time=>0.000535, :after_filters_time=>1.8e-05, :before_filters_time=>9.3e-05}
+ ~ Cookie set: _session_id => 690e80184145d9555337e15ad8a4fb09 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001006, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => f6129c5211d641e644ccc8aa330a233a -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/
+ ~ {:action_time=>0.001165, :after_filters_time=>1.9e-05, :before_filters_time=>9.8e-05}
+ ~ Cookie set: _session_id => f720d277cfc86a28dba3ec6524eac2b2 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/
+ ~ {:action_time=>0.001051, :after_filters_time=>2.0e-05, :before_filters_time=>9.3e-05}
+ ~ Cookie set: _session_id => 2485e3a4b5cde0f4ac69a2625504c917 -- {"path"=>"/"}
+ ~ {:action_time=>0.000962, :after_filters_time=>2.0e-05, :before_filters_time=>9.4e-05}
+ ~ Cookie set: _session_id => 9db06c74fe45a70885a0e332aa789d42 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000743, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 9ef5444ee93a332a60b5e35781566c4b -- {"path"=>"/"}
+ ~ {:action_time=>0.000753, :after_filters_time=>1.9e-05, :before_filters_time=>0.000101}
+ ~ Cookie set: _session_id => 81cc9166a0a99283d967c5215c2302a7 -- {"path"=>"/"}
+ ~ {:action_time=>0.000691, :after_filters_time=>1.9e-05, :before_filters_time=>9.1e-05}
+ ~ Cookie set: _session_id => 3d62cee829010bf6a725b5484ce5d2a6 -- {"path"=>"/"}
+ ~ {:action_time=>0.00075, :after_filters_time=>2.0e-05, :before_filters_time=>0.0001}
+ ~ Cookie set: _session_id => d0ecde162fc093fd8442a48d8c9e8c13 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001002, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 32fdfd6e8b53c37854b84c6390b46e85 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/1
+ ~ {:action_time=>0.001277, :after_filters_time=>2.1e-05, :before_filters_time=>0.000107}
+ ~ Cookie set: _session_id => 98130e39cf51baf06f66f350988b9d6e -- {"path"=>"/"}
+ ~ {:action_time=>0.001133, :after_filters_time=>2.1e-05, :before_filters_time=>0.000102}
+ ~ Cookie set: _session_id => f70eadca51f1e53989d11a35cab08c1f -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/1
+ ~ {:action_time=>0.001199, :after_filters_time=>1.9e-05, :before_filters_time=>9.5e-05}
+ ~ Cookie set: _session_id => 33b659bb474b38d276bdbf65c25a5c5b -- {"path"=>"/"}
+ ~ {:action_time=>0.001058, :after_filters_time=>1.9e-05, :before_filters_time=>9.7e-05}
+ ~ Cookie set: _session_id => 9aeaf2780e89747452ef83605e1465f5 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000749, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 6da78cce8e78036e9cf9759b80575b63 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000914, :after_filters_time=>2.0e-05, :before_filters_time=>0.000106}
+ ~ Cookie set: _session_id => e78faf5ace0ce2f4614387cd82fccecd -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000809, :after_filters_time=>2.0e-05, :before_filters_time=>9.3e-05}
+ ~ Cookie set: _session_id => 67c8b914dbd9db10066c9a39d9163131 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000813, :after_filters_time=>2.0e-05, :before_filters_time=>9.1e-05}
+ ~ Cookie set: _session_id => 02572f3c224bb8cc4c0a40ed304197bd -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000865, :after_filters_time=>2.0e-05, :before_filters_time=>9.5e-05}
+ ~ Cookie set: _session_id => ea60d4bba6663b5d974c750c9f9cc336 -- {"path"=>"/"}
+ ~ {:action_time=>0.000622, :after_filters_time=>1.9e-05, :before_filters_time=>3.5e-05}
+ ~ Cookie set: _session_id => 46a95a2cc49b64a791f50a319dfb0fb6 -- {"path"=>"/"}
+ ~ {:action_time=>0.000533, :after_filters_time=>1.8e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => 0abe704e9db17acda5ccb0f21f615fe3 -- {"path"=>"/"}
+ ~ {:action_time=>0.000494, :after_filters_time=>1.8e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => b4e850a50391e291cad38fd8769fab8c -- {"path"=>"/"}
+ ~ {:action_time=>0.000908, :after_filters_time=>2.1e-05, :before_filters_time=>3.9e-05}
+ ~ Cookie set: _session_id => 3be93831eb660bdf1f97372133b6bf2a -- {"path"=>"/"}
+ ~ {:action_time=>0.000732, :after_filters_time=>2.1e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => 219f031d03a2e625f3d80dbf57dfac93 -- {"path"=>"/"}
+ ~ {:action_time=>0.000697, :after_filters_time=>1.8e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => 1ee4eeb6f32ace38aa58954097b66730 -- {"path"=>"/"}
+ ~ {:action_time=>0.000769, :after_filters_time=>2.2e-05, :before_filters_time=>3.4e-05}
+ ~ Cookie set: _session_id => 358459efca97e4dad75d6ce882c3fc42 -- {"path"=>"/"}
+ ~ {:action_time=>0.000641, :after_filters_time=>1.9e-05, :before_filters_time=>3.8e-05}
+ ~ Cookie set: _session_id => 9c5da3e668e3daff96613a9857bf6b26 -- {"path"=>"/"}
+ ~ {:action_time=>0.001625, :after_filters_time=>2.8e-05, :before_filters_time=>3.8e-05}
+ ~ Cookie set: _session_id => e23525438bc7b546a4d7ad3beff998ed -- {"path"=>"/"}
+ ~ {:action_time=>0.000571, :after_filters_time=>1.8e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 12b15c08aaf724a3aa64af612f1a9c62 -- {"path"=>"/"}
+ ~ {:action_time=>0.000486, :after_filters_time=>1.8e-05, :before_filters_time=>3.1e-05}
+ ~ Loaded TEST Environment...
+ ~ loading gem 'merb_helpers' ...
+ ~ loading gem 'merb-assets' ...
+ ~ loading gem 'merb_stories' ...
+ ~ loading gem 'maruku' ...
+ ~ loading gem 'dm-validations' ...
+ ~ Connecting to database...
+ ~ loading gem 'merb_datamapper' ...
+ ~ Compiling routes...
+ ~ Using in-memory sessions; sessions will be lost whenever the server stops.
+ ~ Cookie set: _session_id => 8ec0ffad85dbd2129b849673cd0feae5 -- {"path"=>"/"}
+ ~ {:action_time=>0.001734, :after_filters_time=>1.7e-05, :before_filters_time=>2.3e-05}
+ ~ Cookie set: _session_id => c2d163c8212d3349c6e263f265327ae7 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000754, :after_filters_time=>1.5e-05, :before_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 643e70cb24d0d7cb4b0a385cfd5cfc42 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000719, :after_filters_time=>1.5e-05, :before_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => b28063e75f45fe269c9d7c9f15d2188a -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000696, :after_filters_time=>1.6e-05, :before_filters_time=>1.8e-05}
+ ~ Cookie set: _session_id => 3bf1b277b736cacd7fa26e43cb479f7d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000678, :after_filters_time=>1.5e-05, :before_filters_time=>1.7e-05}
+ ~ Cookie set: _session_id => 006ccb13b763be7b166cf50d094c03e6 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000617, :after_filters_time=>1.5e-05, :before_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 076d9e9c96ecf5b961d5d62bd5f2c353 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000502, :after_filters_time=>1.4e-05, :before_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => 8c651699f973c1e1e9668162b1676c52 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000932, :after_filters_time=>1.7e-05}
+ ~ Cookie set: _session_id => 2314b11de368da5491f0a3c1427505fe -- {"path"=>"/"}
+ ~ {:action_time=>0.003126, :after_filters_time=>1.6e-05, :before_filters_time=>8.5e-05}
+ ~ Cookie set: _session_id => 376fd3ee3e06be85c0b1c45aaf1559e5 -- {"path"=>"/"}
+ ~ {:action_time=>0.003034, :after_filters_time=>1.5e-05, :before_filters_time=>8.1e-05}
+ ~ Cookie set: _session_id => 1e880c3e188ad28104d022cb599d5dd6 -- {"path"=>"/"}
+ ~ {:action_time=>0.002894, :after_filters_time=>1.4e-05, :before_filters_time=>8.0e-05}
+ ~ Cookie set: _session_id => 60323166011ff27c1f30c66076ed6259 -- {"path"=>"/"}
+ ~ {:action_time=>1.064746, :after_filters_time=>1.6e-05, :before_filters_time=>7.4e-05}
+ ~ Cookie set: _session_id => 45efd01268c1e454a25b6d755c4160b3 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001025, :after_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => 7e073d6e5f90e3fd38a5888c2d873501 -- {"path"=>"/"}
+ ~ {:action_time=>0.000497, :after_filters_time=>1.4e-05, :before_filters_time=>8.4e-05}
+ ~ Cookie set: _session_id => 6f61f8bf18068cc1241afa3b3ee9c7c6 -- {"path"=>"/"}
+ ~ {:action_time=>0.000444, :after_filters_time=>1.4e-05, :before_filters_time=>7.3e-05}
+ ~ Cookie set: _session_id => 60dec42d985f50bdf84e134a020fd127 -- {"path"=>"/"}
+ ~ {:action_time=>0.000434, :after_filters_time=>1.3e-05, :before_filters_time=>7.2e-05}
+ ~ Cookie set: _session_id => 37100894999e4c3fe11d608ec6b9ed77 -- {"path"=>"/"}
+ ~ {:action_time=>0.00061, :after_filters_time=>1.4e-05, :before_filters_time=>2.7e-05}
+ ~ Cookie set: _session_id => ccfa8f3c151163315a707bbd3958ec89 -- {"path"=>"/"}
+ ~ {:action_time=>0.000531, :after_filters_time=>1.5e-05, :before_filters_time=>2.6e-05}
+ ~ Cookie set: _session_id => b7cb3a8982d60e35cc135ddb11ebaf6a -- {"path"=>"/"}
+ ~ {:action_time=>0.000557, :after_filters_time=>1.4e-05, :before_filters_time=>2.8e-05}
+ ~ Cookie set: _session_id => f765b324a32a538a9c8428874d12cc97 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000592, :after_filters_time=>1.5e-05}
+ ~ Cookie set: _session_id => 54291d5870ba6d5394e75f0ef971ea26 -- {"path"=>"/"}
+ ~ {:action_time=>0.00057, :after_filters_time=>1.5e-05, :before_filters_time=>7.9e-05}
+ ~ Cookie set: _session_id => 2e29e9c7c20341f38bf4d6f1381f1cdb -- {"path"=>"/"}
+ ~ {:action_time=>0.000452, :after_filters_time=>1.4e-05, :before_filters_time=>7.3e-05}
+ ~ Cookie set: _session_id => 0942f866c2e920c13b6cccbd64114b60 -- {"path"=>"/"}
+ ~ {:action_time=>0.000427, :after_filters_time=>1.4e-05, :before_filters_time=>7.3e-05}
+ ~ Cookie set: _session_id => d39a6577ea778342b84a23cd1e39308d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000798, :after_filters_time=>1.5e-05}
+ ~ Cookie set: _session_id => ab3ecdcfd3e1054adc1158b11f9b92a8 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/
+ ~ {:action_time=>0.001222, :after_filters_time=>1.7e-05, :before_filters_time=>8.2e-05}
+ ~ Cookie set: _session_id => 9b7baf6b1de7feea6a1264bd4e0f0029 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/
+ ~ {:action_time=>0.000914, :after_filters_time=>1.6e-05, :before_filters_time=>8.0e-05}
+ ~ Cookie set: _session_id => 43fd3b2c452028a50b0d665d878f059a -- {"path"=>"/"}
+ ~ {:action_time=>0.000765, :after_filters_time=>1.5e-05, :before_filters_time=>7.3e-05}
+ ~ Cookie set: _session_id => f87e932c242d7e53b3bb72c014047b88 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000624, :after_filters_time=>1.5e-05}
+ ~ Cookie set: _session_id => b8916d30ce95fdd3f3cc0bece5988319 -- {"path"=>"/"}
+ ~ {:action_time=>0.000798, :after_filters_time=>1.5e-05, :before_filters_time=>8.3e-05}
+ ~ Cookie set: _session_id => a43439b88b3e2b2b7c72dbec8ee825ac -- {"path"=>"/"}
+ ~ {:action_time=>0.000849, :after_filters_time=>1.4e-05, :before_filters_time=>7.5e-05}
+ ~ Cookie set: _session_id => 39948863a1ccaf6620c1f3cfbb07fab9 -- {"path"=>"/"}
+ ~ {:action_time=>0.000881, :after_filters_time=>1.5e-05, :before_filters_time=>7.2e-05}
+ ~ Cookie set: _session_id => e8f5ab6eecdafe068741b59b0050f723 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000888, :after_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => 7abab1405d919d4af955c9017e83493a -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/1
+ ~ {:action_time=>0.001038, :after_filters_time=>1.6e-05, :before_filters_time=>8.5e-05}
+ ~ Cookie set: _session_id => 247c87f3aa373e572d15343ea21f3502 -- {"path"=>"/"}
+ ~ {:action_time=>0.000865, :after_filters_time=>1.5e-05, :before_filters_time=>7.6e-05}
+ ~ Cookie set: _session_id => 9c4b75db46c89648f937c1f02dfcb1db -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/1
+ ~ {:action_time=>0.000938, :after_filters_time=>1.4e-05, :before_filters_time=>7.5e-05}
+ ~ Cookie set: _session_id => 7cc9d636424e2e7a6a8f852078060b0f -- {"path"=>"/"}
+ ~ {:action_time=>0.001362, :after_filters_time=>1.5e-05, :before_filters_time=>0.000127}
+ ~ Cookie set: _session_id => 576b9c9d26243b237a104f526dcb9552 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000648, :after_filters_time=>1.5e-05}
+ ~ Cookie set: _session_id => ae51234c3b3094219a280e5897d959f1 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000722, :after_filters_time=>1.4e-05, :before_filters_time=>8.1e-05}
+ ~ Cookie set: _session_id => b475f0ef8a9108987a5a2ebaa9676d9b -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000648, :after_filters_time=>1.4e-05, :before_filters_time=>7.4e-05}
+ ~ Cookie set: _session_id => bee7bb6639684ebe555667a93b8c5144 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.00066, :after_filters_time=>1.4e-05, :before_filters_time=>7.5e-05}
+ ~ Cookie set: _session_id => 5a6334bc1b2518039b01e71d37c3076c -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000771, :after_filters_time=>1.5e-05, :before_filters_time=>8.9e-05}
+ ~ Cookie set: _session_id => b17aff41d0f5986badb5e5299b3f2084 -- {"path"=>"/"}
+ ~ {:action_time=>0.000607, :after_filters_time=>1.6e-05, :before_filters_time=>2.7e-05}
+ ~ Cookie set: _session_id => 441818b6a0ab573b5470a4f9ab84a668 -- {"path"=>"/"}
+ ~ {:action_time=>0.000611, :after_filters_time=>1.5e-05, :before_filters_time=>2.8e-05}
+ ~ Cookie set: _session_id => c384d0e97b3aa7669dbf0c156d2f48c7 -- {"path"=>"/"}
+ ~ {:action_time=>0.001697, :after_filters_time=>1.5e-05, :before_filters_time=>2.9e-05}
+ ~ Cookie set: _session_id => 82638bfa504e4c11e2c3def2caceae30 -- {"path"=>"/"}
+ ~ {:action_time=>0.000849, :after_filters_time=>1.8e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => f7dabc16a8b12dafeedc122ce9cf9ae8 -- {"path"=>"/"}
+ ~ {:action_time=>0.000495, :after_filters_time=>1.6e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => 4757ae36bd53c7a2a35fe127745485e1 -- {"path"=>"/"}
+ ~ {:action_time=>0.000491, :after_filters_time=>1.8e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => 921a7bb3a32a31d6fff3b2304ec140b4 -- {"path"=>"/"}
+ ~ {:action_time=>0.000725, :after_filters_time=>1.8e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => ef8639392e517c68431547ec4deb8be7 -- {"path"=>"/"}
+ ~ {:action_time=>0.000636, :after_filters_time=>1.9e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => 16844c262f403966868d2ea32dfd31ce -- {"path"=>"/"}
+ ~ {:action_time=>0.000626, :after_filters_time=>1.8e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => 6e81c63cb3033f3a3eed15143271149b -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000751, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 4bee4e9e99059eb3350a8ffec0a131f8 -- {"path"=>"/"}
+ ~ {:action_time=>0.000678, :after_filters_time=>1.9e-05, :before_filters_time=>9.9e-05}
+ ~ Cookie set: _session_id => 1ef838210585863c4555d191c116b7ad -- {"path"=>"/"}
+ ~ {:action_time=>0.000527, :after_filters_time=>1.7e-05, :before_filters_time=>9.0e-05}
+ ~ Cookie set: _session_id => 177125efee81fa039308b6efeb9dabe1 -- {"path"=>"/"}
+ ~ {:action_time=>0.000511, :after_filters_time=>1.7e-05, :before_filters_time=>9.8e-05}
+ ~ Cookie set: _session_id => 85171dc8fd1b67c950ebb60708bff2ab -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000981, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 2047558012410247049d12107dc1b8f1 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/
+ ~ {:action_time=>0.00125, :after_filters_time=>1.9e-05, :before_filters_time=>0.000105}
+ ~ Cookie set: _session_id => bee891df2663c2764260f4d795ad62e6 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/
+ ~ {:action_time=>0.001043, :after_filters_time=>1.8e-05, :before_filters_time=>9.2e-05}
+ ~ Cookie set: _session_id => 3ed1c7037182a231cd2e36b0e0e61877 -- {"path"=>"/"}
+ ~ {:action_time=>0.000935, :after_filters_time=>1.8e-05, :before_filters_time=>9.0e-05}
+ ~ Cookie set: _session_id => 8a36ba3e4a3e5f40bae136b186b730bc -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000779, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 8c700b8e6182c5c30fce1d2afa2f2d8c -- {"path"=>"/"}
+ ~ {:action_time=>0.00076, :after_filters_time=>1.9e-05, :before_filters_time=>0.000102}
+ ~ Cookie set: _session_id => b72d25e176c7076248d2abb36a660fae -- {"path"=>"/"}
+ ~ {:action_time=>0.000703, :after_filters_time=>1.8e-05, :before_filters_time=>8.8e-05}
+ ~ Cookie set: _session_id => 4fe9e4ae5573240172c0bfa68dfd95c6 -- {"path"=>"/"}
+ ~ {:action_time=>0.000676, :after_filters_time=>1.8e-05, :before_filters_time=>8.7e-05}
+ ~ Cookie set: _session_id => 7c2f32ae1d446fd7e89b36d44d32f65d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001179, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 6c900fe87498356602a232e251526d5c -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/1
+ ~ {:action_time=>0.00121, :after_filters_time=>1.8e-05, :before_filters_time=>0.0001}
+ ~ Cookie set: _session_id => 880483d25cb2f59ece47162571525dfa -- {"path"=>"/"}
+ ~ {:action_time=>0.00113, :after_filters_time=>1.8e-05, :before_filters_time=>0.0001}
+ ~ Cookie set: _session_id => d0aa3176721c48a5a25b6f18f092c14d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/1
+ ~ {:action_time=>0.001266, :after_filters_time=>1.9e-05, :before_filters_time=>9.7e-05}
+ ~ Cookie set: _session_id => 2897c77214d2dd349bf378a46d240be0 -- {"path"=>"/"}
+ ~ {:action_time=>0.001053, :after_filters_time=>1.8e-05, :before_filters_time=>9.2e-05}
+ ~ Cookie set: _session_id => c5bf00493463a67e679e91cfb208d08c -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000794, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => f0f636d87e79fa12f36404c6f99c3c9f -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000899, :after_filters_time=>1.9e-05, :before_filters_time=>9.9e-05}
+ ~ Cookie set: _session_id => df568b6a4be08e2d6eaff69554ec6af6 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.00104, :after_filters_time=>1.9e-05, :before_filters_time=>0.000102}
+ ~ Cookie set: _session_id => 13eee63fbb0fef274e24b96e4624b6c9 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000854, :after_filters_time=>1.7e-05, :before_filters_time=>9.2e-05}
+ ~ Cookie set: _session_id => c97c070f83bfb81a7e8d27093657294a -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000836, :after_filters_time=>1.8e-05, :before_filters_time=>9.2e-05}
+ ~ Cookie set: _session_id => c8690d984f6dbd2e676a9c26c4795e77 -- {"path"=>"/"}
+ ~ {:action_time=>0.000519, :after_filters_time=>1.8e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 19f9156709af0e32d7ee3b8106795f9b -- {"path"=>"/"}
+ ~ {:action_time=>0.000991, :after_filters_time=>1.8e-05, :before_filters_time=>3.6e-05}
+ ~ Cookie set: _session_id => f0f4e70252c26213c569d94adb647fa9 -- {"path"=>"/"}
+ ~ {:action_time=>0.000501, :after_filters_time=>1.7e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => dbcc9df99399deb7fadc3adce301f390 -- {"path"=>"/"}
+ ~ {:action_time=>0.000831, :after_filters_time=>2.0e-05, :before_filters_time=>3.5e-05}
+ ~ Cookie set: _session_id => 3e8d212b2f2092ccafab58e2f26e6e04 -- {"path"=>"/"}
+ ~ {:action_time=>0.000745, :after_filters_time=>1.9e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => 91b84b4e83f57cc570c1fe6a2151b937 -- {"path"=>"/"}
+ ~ {:action_time=>0.00069, :after_filters_time=>1.8e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => 8f7ee12b26da112cf817be28dbec760d -- {"path"=>"/"}
+ ~ {:action_time=>0.000774, :after_filters_time=>1.9e-05, :before_filters_time=>3.4e-05}
+ ~ Cookie set: _session_id => 14e3255791acfc80e1737eb869516157 -- {"path"=>"/"}
+ ~ {:action_time=>0.000566, :after_filters_time=>1.8e-05, :before_filters_time=>3.4e-05}
+ ~ Cookie set: _session_id => 72daaf329e3cff8cbfb9eb8a9bd975b5 -- {"path"=>"/"}
+ ~ {:action_time=>0.000485, :after_filters_time=>1.7e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => c5bf4943784adc9441111760e2b000eb -- {"path"=>"/"}
+ ~ {:action_time=>0.000498, :after_filters_time=>1.8e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => f3833be89cd120617a633fadc47ccfb1 -- {"path"=>"/"}
+ ~ {:action_time=>0.000471, :after_filters_time=>1.7e-05, :before_filters_time=>3.1e-05}
+ ~ Loaded TEST Environment...
+ ~ loading gem 'merb_helpers' ...
+ ~ loading gem 'merb-assets' ...
+ ~ loading gem 'merb_stories' ...
+ ~ loading gem 'maruku' ...
+ ~ loading gem 'dm-validations' ...
+ ~ Connecting to database...
+ ~ loading gem 'merb_datamapper' ...
+ ~ Compiling routes...
+ ~ Using in-memory sessions; sessions will be lost whenever the server stops.
+ ~ Loaded TEST Environment...
+ ~ loading gem 'merb_helpers' ...
+ ~ loading gem 'merb-assets' ...
+ ~ loading gem 'merb_stories' ...
+ ~ loading gem 'maruku' ...
+ ~ loading gem 'dm-validations' ...
+ ~ Connecting to database...
+ ~ loading gem 'merb_datamapper' ...
+ ~ Compiling routes...
+ ~ Using in-memory sessions; sessions will be lost whenever the server stops.
+ ~ Cookie set: _session_id => a690d0cc7f7fd25142ac65aee2b538fb -- {"path"=>"/"}
+ ~ {:action_time=>0.00158, :after_filters_time=>1.5e-05, :before_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 0d58218fc4496a4826ddba10416d865d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.00076, :after_filters_time=>1.6e-05, :before_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 75272fe96ebcef8f690e60a81a2d273d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000988, :after_filters_time=>1.6e-05, :before_filters_time=>2.1e-05}
+ ~ Cookie set: _session_id => f7d331981ababc8e9e22260ae6cc9653 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000685, :after_filters_time=>1.5e-05, :before_filters_time=>1.7e-05}
+ ~ Cookie set: _session_id => 1f4de985f421a072838d72f447ab7b3e -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000639, :after_filters_time=>1.5e-05, :before_filters_time=>1.6e-05}
+ ~ Cookie set: _session_id => bf9dea27de649aabc8703c1bbe8d9336 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000587, :after_filters_time=>1.5e-05, :before_filters_time=>1.8e-05}
+ ~ Cookie set: _session_id => 3b3de8b0788f97e613e325e786ca092d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000514, :after_filters_time=>1.5e-05, :before_filters_time=>1.7e-05}
+ ~ Cookie set: _session_id => 5e4c9caae3848b6dedb83d8510985458 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000856, :after_filters_time=>3.5e-05}
+ ~ Cookie set: _session_id => 5033fd12643bd02a0e2e840ac3996b9a -- {"path"=>"/"}
+ ~ {:action_time=>0.003032, :after_filters_time=>1.6e-05, :before_filters_time=>8.6e-05}
+ ~ Cookie set: _session_id => 15e44956f1ecc597c3ed3ab67e8b1884 -- {"path"=>"/"}
+ ~ {:action_time=>0.002825, :after_filters_time=>1.6e-05, :before_filters_time=>7.5e-05}
+ ~ Cookie set: _session_id => 1b04a9b136c41e8b1794f2887bbe31f1 -- {"path"=>"/"}
+ ~ {:action_time=>0.002773, :after_filters_time=>1.5e-05, :before_filters_time=>7.4e-05}
+ ~ Cookie set: _session_id => 93bd6bd3e50ccc0d6c65c5ef818aff3a -- {"path"=>"/"}
+ ~ {:action_time=>1.176363, :after_filters_time=>2.0e-05, :before_filters_time=>0.000215}
+ ~ Cookie set: _session_id => e518251da60603e0853379fd1bf90ed2 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001043, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 7a1ecc9f845fd80520ee49e32d8e6b9c -- {"path"=>"/"}
+ ~ {:action_time=>0.000635, :after_filters_time=>1.9e-05, :before_filters_time=>0.000103}
+ ~ Cookie set: _session_id => 034511c73cc7420a2f5958cc1608830d -- {"path"=>"/"}
+ ~ {:action_time=>0.000549, :after_filters_time=>1.8e-05, :before_filters_time=>9.0e-05}
+ ~ Cookie set: _session_id => bfa9eccbcfb90ed0e3e3e435c97185f4 -- {"path"=>"/"}
+ ~ {:action_time=>0.000578, :after_filters_time=>1.8e-05, :before_filters_time=>9.8e-05}
+ ~ Cookie set: _session_id => 2bbf0ce42620f98be2925b1af1452f76 -- {"path"=>"/"}
+ ~ {:action_time=>0.000788, :after_filters_time=>2.0e-05, :before_filters_time=>3.5e-05}
+ ~ Cookie set: _session_id => b9459607deb5da08be6b6f82e5d4e39f -- {"path"=>"/"}
+ ~ {:action_time=>0.000722, :after_filters_time=>1.9e-05, :before_filters_time=>3.4e-05}
+ ~ Cookie set: _session_id => db1ab72ff4ffcbc922739f6422750d91 -- {"path"=>"/"}
+ ~ {:action_time=>0.000704, :after_filters_time=>2.1e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 5a84a1c88ccb51fdcc1f75cb4acf82c8 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000793, :after_filters_time=>2.2e-05}
+ ~ Cookie set: _session_id => 8f142d5679c73c96f5055da3ecc7202f -- {"path"=>"/"}
+ ~ {:action_time=>0.000726, :after_filters_time=>1.9e-05, :before_filters_time=>0.000105}
+ ~ Cookie set: _session_id => 2c2f65295b811db133e80c32f854e44e -- {"path"=>"/"}
+ ~ {:action_time=>0.000589, :after_filters_time=>1.8e-05, :before_filters_time=>9.6e-05}
+ ~ Cookie set: _session_id => 47ffa4d4a7d9675b7cc80b79d862a5dc -- {"path"=>"/"}
+ ~ {:action_time=>0.00063, :after_filters_time=>1.8e-05, :before_filters_time=>0.000105}
+ ~ Cookie set: _session_id => 39549f8793d8ef89637b0d256a2d5de6 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001086, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 544282bb03459b7d437cf9f49ff50c24 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/
+ ~ {:action_time=>0.001276, :after_filters_time=>2.1e-05, :before_filters_time=>0.000109}
+ ~ Cookie set: _session_id => 0944f149becefb041849e73f1d22d34f -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/
+ ~ {:action_time=>0.00119, :after_filters_time=>2.0e-05, :before_filters_time=>0.000106}
+ ~ Cookie set: _session_id => f4b0d0d7be7cea0c06cd0993b521dfa7 -- {"path"=>"/"}
+ ~ {:action_time=>0.001379, :after_filters_time=>2.1e-05, :before_filters_time=>0.000101}
+ ~ Cookie set: _session_id => ae2d27a6030266e2fab6dabb3f68ef14 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000809, :after_filters_time=>2.1e-05}
+ ~ Cookie set: _session_id => 78229c4f3b198b5d6f1c0edbc84d0209 -- {"path"=>"/"}
+ ~ {:action_time=>0.000831, :after_filters_time=>2.1e-05, :before_filters_time=>0.000107}
+ ~ Cookie set: _session_id => 6ff7d3e75b4ae819de10a1e4fe6e2f77 -- {"path"=>"/"}
+ ~ {:action_time=>0.000731, :after_filters_time=>1.9e-05, :before_filters_time=>9.1e-05}
+ ~ Cookie set: _session_id => 8ad92a7bcae199601ad6643ffdaaca21 -- {"path"=>"/"}
+ ~ {:action_time=>0.000716, :after_filters_time=>1.8e-05, :before_filters_time=>9.1e-05}
+ ~ Cookie set: _session_id => 0ae941f81783dc2c6560ba5cc0fef429 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001052, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 525dc3f57ba3d432bf78ff3d3afeb32a -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/1
+ ~ {:action_time=>0.001304, :after_filters_time=>2.0e-05, :before_filters_time=>0.000132}
+ ~ Cookie set: _session_id => 8cb7c27280e3b73c5c819b6702156bca -- {"path"=>"/"}
+ ~ {:action_time=>0.001116, :after_filters_time=>1.8e-05, :before_filters_time=>9.8e-05}
+ ~ Cookie set: _session_id => 2a36c26abf42a1f5e5573584324646cb -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/1
+ ~ {:action_time=>0.001205, :after_filters_time=>1.8e-05, :before_filters_time=>9.4e-05}
+ ~ Cookie set: _session_id => 85347865fb8f91367e9d8699f0ee5126 -- {"path"=>"/"}
+ ~ {:action_time=>0.001078, :after_filters_time=>1.9e-05, :before_filters_time=>0.000103}
+ ~ Cookie set: _session_id => a35e08da2cccda16181e61bbcac708d1 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.00078, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => d798b90d97556ceba95d6867084e02a1 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.00093, :after_filters_time=>1.9e-05, :before_filters_time=>0.000116}
+ ~ Cookie set: _session_id => dee1e04407924643c9563687adf47294 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000887, :after_filters_time=>2.1e-05, :before_filters_time=>0.0001}
+ ~ Cookie set: _session_id => b41d741442ae339ba1661eed1ecfda77 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000839, :after_filters_time=>1.9e-05, :before_filters_time=>9.6e-05}
+ ~ Cookie set: _session_id => 0131142d3a0800ea1a7ba111707afe59 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000805, :after_filters_time=>1.9e-05, :before_filters_time=>9.2e-05}
+ ~ Cookie set: _session_id => ffcc1d262a86902aac33315a461f17e5 -- {"path"=>"/"}
+ ~ {:action_time=>0.000775, :after_filters_time=>1.9e-05, :before_filters_time=>3.4e-05}
+ ~ Cookie set: _session_id => 8de201d723ddb785a7b42e86fbc7e379 -- {"path"=>"/"}
+ ~ {:action_time=>0.000728, :after_filters_time=>1.8e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => 4ea4673d0c77f65e10143ec51157e464 -- {"path"=>"/"}
+ ~ {:action_time=>0.000695, :after_filters_time=>1.7e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => bc379e3fc6f9d700b2f5a59755ce1ee6 -- {"path"=>"/"}
+ ~ {:action_time=>0.000906, :after_filters_time=>1.8e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 26c4883ceb5e77c551eb180c9be83fa6 -- {"path"=>"/"}
+ ~ {:action_time=>0.000519, :after_filters_time=>1.8e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => 715a680a8c3208f4656dd0d6e05b1d89 -- {"path"=>"/"}
+ ~ {:action_time=>0.000521, :after_filters_time=>1.8e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => 1844aba743a7b1b87318ddc4729f0695 -- {"path"=>"/"}
+ ~ {:action_time=>0.000753, :after_filters_time=>1.9e-05, :before_filters_time=>3.4e-05}
+ ~ Cookie set: _session_id => 7d0e6377688b0aee1e13f19a5bfea776 -- {"path"=>"/"}
+ ~ {:action_time=>0.000664, :after_filters_time=>1.9e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => 8d72269aa61908bd6cf811c7516e418f -- {"path"=>"/"}
+ ~ {:action_time=>0.000713, :after_filters_time=>1.9e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => 94daff55146a7dc144e7fab34b035aa7 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000833, :after_filters_time=>2.1e-05}
+ ~ Cookie set: _session_id => da685ca094dc0c0918b9bbd5949681e4 -- {"path"=>"/"}
+ ~ {:action_time=>0.000781, :after_filters_time=>1.9e-05, :before_filters_time=>0.000134}
+ ~ Cookie set: _session_id => 2e0fb1eabb0aab443a3b78873b1c5577 -- {"path"=>"/"}
+ ~ {:action_time=>0.000617, :after_filters_time=>1.9e-05, :before_filters_time=>9.7e-05}
+ ~ Cookie set: _session_id => 81bb3d6b9df8beccf4cde95b07951fa0 -- {"path"=>"/"}
+ ~ {:action_time=>0.000544, :after_filters_time=>1.8e-05, :before_filters_time=>9.4e-05}
+ ~ Cookie set: _session_id => be37d8bc5fe107c5bd166d4ad4c2f915 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001063, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 4ed47b4d527c85de9d794d25bd89cb91 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/
+ ~ {:action_time=>0.001259, :after_filters_time=>1.9e-05, :before_filters_time=>0.000106}
+ ~ Cookie set: _session_id => 78489a9e4c91d460437729907a007f29 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/
+ ~ {:action_time=>0.001118, :after_filters_time=>2.0e-05, :before_filters_time=>9.7e-05}
+ ~ Cookie set: _session_id => bfc8a88c78f2db8b8b14952f8521c5a7 -- {"path"=>"/"}
+ ~ {:action_time=>0.001124, :after_filters_time=>2.0e-05, :before_filters_time=>0.000111}
+ ~ Cookie set: _session_id => a675ca9b973e968d867b6d822bdfad97 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000885, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 400b4c593c774287123a341cf159a230 -- {"path"=>"/"}
+ ~ {:action_time=>0.000798, :after_filters_time=>1.9e-05, :before_filters_time=>0.000107}
+ ~ Cookie set: _session_id => 14cd29889346585d7a363a8f4aa46bdc -- {"path"=>"/"}
+ ~ {:action_time=>0.000751, :after_filters_time=>1.9e-05, :before_filters_time=>9.6e-05}
+ ~ Cookie set: _session_id => 97c04e1538ffa92554f81a6cc43efc06 -- {"path"=>"/"}
+ ~ {:action_time=>0.000718, :after_filters_time=>2.0e-05, :before_filters_time=>9.4e-05}
+ ~ Cookie set: _session_id => 6854836199f54a9f2fadcd80994ea353 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001081, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 6d8e960a33bdd4768585717e2b79bf44 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/1
+ ~ {:action_time=>0.001302, :after_filters_time=>2.0e-05, :before_filters_time=>0.000104}
+ ~ Cookie set: _session_id => 14e21a08d084039da500aa15a6fb9a7a -- {"path"=>"/"}
+ ~ {:action_time=>0.001154, :after_filters_time=>2.0e-05, :before_filters_time=>9.8e-05}
+ ~ Cookie set: _session_id => 234c86ce4de76ad4377d8425c0919f1b -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/1
+ ~ {:action_time=>0.001258, :after_filters_time=>1.9e-05, :before_filters_time=>0.000109}
+ ~ Cookie set: _session_id => 6813df0b9a09d2f56c3414456c46c843 -- {"path"=>"/"}
+ ~ {:action_time=>0.001101, :after_filters_time=>1.9e-05, :before_filters_time=>0.0001}
+ ~ Cookie set: _session_id => a4859f18a5817cbab13de3d41d1c95b7 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001939, :after_filters_time=>2.1e-05}
+ ~ Cookie set: _session_id => 36d70559274499d20168900a542f5e9d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000968, :after_filters_time=>2.0e-05, :before_filters_time=>0.000108}
+ ~ Cookie set: _session_id => 48031503ea9c359cf158729d3db20225 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.00085, :after_filters_time=>2.1e-05, :before_filters_time=>9.7e-05}
+ ~ Cookie set: _session_id => 62cc0d031712bcfe35848291c42d0ba7 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000869, :after_filters_time=>2.2e-05, :before_filters_time=>9.8e-05}
+ ~ Cookie set: _session_id => 42c4a0148c6481463a319b2fd6680057 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000891, :after_filters_time=>2.0e-05, :before_filters_time=>9.6e-05}
+ ~ Cookie set: _session_id => e3d9660574eb89b9eb32c50759516954 -- {"path"=>"/"}
+ ~ {:action_time=>0.000533, :after_filters_time=>1.9e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => eb5854542d0b364d28765c7a159f1b9f -- {"path"=>"/"}
+ ~ {:action_time=>0.000533, :after_filters_time=>1.8e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => 660f715db75ce9ecb5fd576d7a8cf06a -- {"path"=>"/"}
+ ~ {:action_time=>0.000487, :after_filters_time=>1.7e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => a42843466e3b8a6795be8b8b52a7a4f5 -- {"path"=>"/"}
+ ~ {:action_time=>0.000807, :after_filters_time=>2.0e-05, :before_filters_time=>3.4e-05}
+ ~ Cookie set: _session_id => 1414246690d391697bc44cf2a0db0b89 -- {"path"=>"/"}
+ ~ {:action_time=>0.000694, :after_filters_time=>1.9e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => e4dd5294f518a93c9238ce1035bb3578 -- {"path"=>"/"}
+ ~ {:action_time=>0.000709, :after_filters_time=>1.9e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => ef834ea19997d154a78ed1ccf8216e08 -- {"path"=>"/"}
+ ~ {:action_time=>0.000714, :after_filters_time=>1.8e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => 5815f8d2d389482ac208cd207176f5ca -- {"path"=>"/"}
+ ~ {:action_time=>0.000963, :after_filters_time=>2.0e-05, :before_filters_time=>3.6e-05}
+ ~ Cookie set: _session_id => 2854ce957da790dd7853ebbf060af6af -- {"path"=>"/"}
+ ~ {:action_time=>0.000498, :after_filters_time=>1.8e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => 5f2665bff42e20def123fd29c0f8513f -- {"path"=>"/"}
+ ~ {:action_time=>0.000578, :after_filters_time=>1.8e-05, :before_filters_time=>3.4e-05}
+ ~ Cookie set: _session_id => 86f2c5e9d8df6b1f58c55037cc8366c9 -- {"path"=>"/"}
+ ~ {:action_time=>0.00053, :after_filters_time=>1.8e-05, :before_filters_time=>3.1e-05}
+ ~ Loaded TEST Environment...
+ ~ loading gem 'merb_helpers' ...
+ ~ loading gem 'merb-assets' ...
+ ~ loading gem 'merb_stories' ...
+ ~ loading gem 'maruku' ...
+ ~ loading gem 'dm-validations' ...
+ ~ Connecting to database...
+ ~ loading gem 'merb_datamapper' ...
+ ~ Compiling routes...
+ ~ Using in-memory sessions; sessions will be lost whenever the server stops.
+ ~ Loaded TEST Environment...
+ ~ loading gem 'merb_helpers' ...
+ ~ loading gem 'merb-assets' ...
+ ~ loading gem 'merb_stories' ...
+ ~ loading gem 'maruku' ...
+ ~ loading gem 'dm-validations' ...
+ ~ Connecting to database...
+ ~ loading gem 'merb_datamapper' ...
+ ~ Compiling routes...
+ ~ Using in-memory sessions; sessions will be lost whenever the server stops.
+ ~ Cookie set: _session_id => 6259b3555515ffb2eb0d742d3af3b2ea -- {"path"=>"/"}
+ ~ {:action_time=>0.001981, :after_filters_time=>1.9e-05, :before_filters_time=>2.4e-05}
+ ~ Cookie set: _session_id => dd521224b91978e54c29bb136add1809 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.002162, :after_filters_time=>2.1e-05, :before_filters_time=>2.5e-05}
+ ~ Cookie set: _session_id => 672c8f6deea5e2f1f0893c3ce5bf541d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000878, :after_filters_time=>2.0e-05, :before_filters_time=>2.3e-05}
+ ~ Cookie set: _session_id => cf70de398b4cc0e3ecb73175f5eaf3fc -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.00086, :after_filters_time=>1.9e-05, :before_filters_time=>2.1e-05}
+ ~ Cookie set: _session_id => d782f6e81a8060ad60c20ce0fe51771b -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000865, :after_filters_time=>2.0e-05, :before_filters_time=>2.1e-05}
+ ~ Cookie set: _session_id => 4f194d7d0dd8b59f0f2905703e986c12 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000736, :after_filters_time=>1.9e-05, :before_filters_time=>2.3e-05}
+ ~ Cookie set: _session_id => 4329ac146c7e1137c6a5cb115b603393 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000602, :after_filters_time=>1.7e-05, :before_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => e236fbe1a619a7ae2ff11093f4b5789d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001026, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => a289f9a882d135434d1e92efb5159b2a -- {"path"=>"/"}
+ ~ {:action_time=>0.004183, :after_filters_time=>2.0e-05, :before_filters_time=>9.5e-05}
+ ~ Cookie set: _session_id => 48c4b865840b507dd9abcf0d8fbf3145 -- {"path"=>"/"}
+ ~ {:action_time=>0.003522, :after_filters_time=>1.9e-05, :before_filters_time=>9.2e-05}
+ ~ Cookie set: _session_id => 10fea948057af6636a583601b18624ad -- {"path"=>"/"}
+ ~ {:action_time=>0.003549, :after_filters_time=>1.9e-05, :before_filters_time=>8.9e-05}
+ ~ Cookie set: _session_id => ab86097e500cdff0c53de6bba8f9a5b5 -- {"path"=>"/"}
+ ~ {:action_time=>1.297892, :after_filters_time=>2.1e-05, :before_filters_time=>9.6e-05}
+ ~ Cookie set: _session_id => a945390343d7b6a50a92e6808c00a5dc -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001032, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => f2c7901ad96f3e0f319f9cfa2f3d9bd5 -- {"path"=>"/"}
+ ~ {:action_time=>0.000621, :after_filters_time=>1.9e-05, :before_filters_time=>0.000103}
+ ~ Cookie set: _session_id => 7adcaeb8ac94664305797ff70194ea9c -- {"path"=>"/"}
+ ~ {:action_time=>0.000539, :after_filters_time=>1.8e-05, :before_filters_time=>9.0e-05}
+ ~ Cookie set: _session_id => 6f3de5b6eb03ef21ed117016e27c6369 -- {"path"=>"/"}
+ ~ {:action_time=>0.00053, :after_filters_time=>1.8e-05, :before_filters_time=>8.9e-05}
+ ~ Cookie set: _session_id => 70e0bda32d91d67761fc6e281541670f -- {"path"=>"/"}
+ ~ {:action_time=>0.000709, :after_filters_time=>1.9e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 9cd3c7110fda0a830bc56c8b03488cc8 -- {"path"=>"/"}
+ ~ {:action_time=>0.000716, :after_filters_time=>1.8e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => ed3884ce860c8b4274ac96100c686544 -- {"path"=>"/"}
+ ~ {:action_time=>0.000651, :after_filters_time=>1.8e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => cda69abcf9a4ea9aabab647889f10a96 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000704, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 0ccf2a13fdab492c196917a2d8325932 -- {"path"=>"/"}
+ ~ {:action_time=>0.000687, :after_filters_time=>1.8e-05, :before_filters_time=>9.7e-05}
+ ~ Cookie set: _session_id => 6b2a676cdc071f0310bfe60631f7f4df -- {"path"=>"/"}
+ ~ {:action_time=>0.000562, :after_filters_time=>1.7e-05, :before_filters_time=>8.9e-05}
+ ~ Cookie set: _session_id => 949c2eede76231bcf196ffbbc59a2332 -- {"path"=>"/"}
+ ~ {:action_time=>0.000533, :after_filters_time=>1.7e-05, :before_filters_time=>8.8e-05}
+ ~ Cookie set: _session_id => 0e6fc4776fce140eca9214846cf6369c -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000984, :after_filters_time=>2.1e-05}
+ ~ Cookie set: _session_id => 333f28a8719065b2a40bf75eef32797f -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/
+ ~ {:action_time=>0.001169, :after_filters_time=>1.9e-05, :before_filters_time=>0.00011}
+ ~ Cookie set: _session_id => 1e1f75e8fb3590a712ca45194796bc00 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/
+ ~ {:action_time=>0.001056, :after_filters_time=>1.8e-05, :before_filters_time=>0.000102}
+ ~ Cookie set: _session_id => 5171e8debb412251079e7c7e9e9edc55 -- {"path"=>"/"}
+ ~ {:action_time=>0.000936, :after_filters_time=>1.8e-05, :before_filters_time=>8.8e-05}
+ ~ Cookie set: _session_id => 81910d9d4d60253574253eac848c1ff9 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000781, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 4ff582e78f9e0fbb0dec228422a7f5cf -- {"path"=>"/"}
+ ~ {:action_time=>0.000786, :after_filters_time=>2.0e-05, :before_filters_time=>0.000101}
+ ~ Cookie set: _session_id => c7d2f4dd06478e8f4ee73903df2a5375 -- {"path"=>"/"}
+ ~ {:action_time=>0.000712, :after_filters_time=>1.9e-05, :before_filters_time=>8.8e-05}
+ ~ Cookie set: _session_id => 0cd4b2b1de07eca3ed9aa2d0ec64ba58 -- {"path"=>"/"}
+ ~ {:action_time=>0.000711, :after_filters_time=>1.8e-05, :before_filters_time=>8.8e-05}
+ ~ Cookie set: _session_id => 1d5d01fbee6003e685c5b5f72a6b973b -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001002, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 5f8746cbc817539a35db0fd2155451bd -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/1
+ ~ {:action_time=>0.001279, :after_filters_time=>2.0e-05, :before_filters_time=>0.000104}
+ ~ Cookie set: _session_id => e6114166bfb5a084d4ab9aaec4ee120c -- {"path"=>"/"}
+ ~ {:action_time=>0.001244, :after_filters_time=>1.9e-05, :before_filters_time=>0.000107}
+ ~ Cookie set: _session_id => cfdc99a34e53d0cc1fccb0d5f6c44980 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites/1
+ ~ {:action_time=>0.001166, :after_filters_time=>1.8e-05, :before_filters_time=>9.2e-05}
+ ~ Cookie set: _session_id => 7397e35a2b0822df48f32f513769fc12 -- {"path"=>"/"}
+ ~ {:action_time=>0.001007, :after_filters_time=>1.8e-05, :before_filters_time=>9.0e-05}
+ ~ Cookie set: _session_id => 76b0176491410d8eea806752fedebdff -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000782, :after_filters_time=>1.9e-05}
+ ~ Cookie set: _session_id => 633170c444ebc795437480073813bae0 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.00092, :after_filters_time=>1.9e-05, :before_filters_time=>0.00011}
+ ~ Cookie set: _session_id => ef7e408c4cf66c3cfdb813e7c3f69fb5 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000822, :after_filters_time=>1.8e-05, :before_filters_time=>9.0e-05}
+ ~ Cookie set: _session_id => 2d89dfb805428dc524d373c2059d32fe -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000915, :after_filters_time=>1.9e-05, :before_filters_time=>0.0001}
+ ~ Cookie set: _session_id => b82ba5940f233b9e5d8f2464f0a40127 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/sites
+ ~ {:action_time=>0.000781, :after_filters_time=>1.8e-05, :before_filters_time=>9.0e-05}
+ ~ Cookie set: _session_id => c077dd7831c5786e8111509f6fa784b7 -- {"path"=>"/"}
+ ~ {:action_time=>0.000782, :after_filters_time=>1.9e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 993a29332779118540799cb52087b9e8 -- {"path"=>"/"}
+ ~ {:action_time=>0.000701, :after_filters_time=>1.8e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => 46d232706e1efd675aefab668446b739 -- {"path"=>"/"}
+ ~ {:action_time=>0.000712, :after_filters_time=>1.8e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => 4fe29a57f33d102f9acbcb4dbc0f3731 -- {"path"=>"/"}
+ ~ {:action_time=>0.000901, :after_filters_time=>1.8e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => c6d01baa89903598039e55ab3488eb67 -- {"path"=>"/"}
+ ~ {:action_time=>0.000526, :after_filters_time=>1.7e-05, :before_filters_time=>3.0e-05}
+ ~ Cookie set: _session_id => 2f5533544e4471b772864c5def20e4d9 -- {"path"=>"/"}
+ ~ {:action_time=>0.000531, :after_filters_time=>1.8e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => e4ca56a4703ded01f8be1ef11403443e -- {"path"=>"/"}
+ ~ {:action_time=>0.000747, :after_filters_time=>1.9e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => fc860ef9f8f94e66c197c84938dd5ce2 -- {"path"=>"/"}
+ ~ {:action_time=>0.000703, :after_filters_time=>2.0e-05, :before_filters_time=>3.4e-05}
+ ~ Cookie set: _session_id => 31ba5c6790d7194ab6b2f029ed247f6a -- {"path"=>"/"}
+ ~ {:action_time=>0.000721, :after_filters_time=>1.9e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 9fec4b9f79fa453ac7b964b4a2d564b3 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000798, :after_filters_time=>2.1e-05}
+ ~ Cookie set: _session_id => c94d3a6db4557951aec34d880e5fd3f0 -- {"path"=>"/"}
+ ~ {:action_time=>0.000749, :after_filters_time=>1.9e-05, :before_filters_time=>0.000104}
+ ~ Cookie set: _session_id => 9915a3bd0c8a7bf133a5c6d7741c7786 -- {"path"=>"/"}
+ ~ {:action_time=>0.000561, :after_filters_time=>1.7e-05, :before_filters_time=>9.0e-05}
+ ~ Cookie set: _session_id => 7d086b52c2cb20cc9f24ff6097bb2283 -- {"path"=>"/"}
+ ~ {:action_time=>0.000528, :after_filters_time=>1.7e-05, :before_filters_time=>9.1e-05}
+ ~ Cookie set: _session_id => 06f703a2e00b427ad986c7873c311de6 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001101, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 090623b1d9945a1c92fe55a04fbfa508 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/
+ ~ {:action_time=>0.001296, :after_filters_time=>2.2e-05, :before_filters_time=>0.000105}
+ ~ Cookie set: _session_id => bb0e9bb17b1e8318a2164471f0bceef8 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/
+ ~ {:action_time=>0.001129, :after_filters_time=>2.0e-05, :before_filters_time=>9.5e-05}
+ ~ Cookie set: _session_id => 2fa8c9c4f2884de8ab71dfe51d7d9df3 -- {"path"=>"/"}
+ ~ {:action_time=>0.001051, :after_filters_time=>2.1e-05, :before_filters_time=>9.8e-05}
+ ~ Cookie set: _session_id => 265f0f3537f995919d25d612076620bc -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000788, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => fed69c274948a3165597e7f2aceea165 -- {"path"=>"/"}
+ ~ {:action_time=>0.000834, :after_filters_time=>2.0e-05, :before_filters_time=>0.000105}
+ ~ Cookie set: _session_id => 0893dd96767e17c4331130cb4f84de61 -- {"path"=>"/"}
+ ~ {:action_time=>0.000741, :after_filters_time=>1.9e-05, :before_filters_time=>9.4e-05}
+ ~ Cookie set: _session_id => dfca6f657022f9dce46f32b8097975e6 -- {"path"=>"/"}
+ ~ {:action_time=>0.000734, :after_filters_time=>1.9e-05, :before_filters_time=>9.4e-05}
+ ~ Cookie set: _session_id => 4c63d1cc4a3f2b73c90658d2fe9fcd05 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001073, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => 058e412c743609b2e7616bd9bb6d8969 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/1
+ ~ {:action_time=>0.001324, :after_filters_time=>2.0e-05, :before_filters_time=>0.000102}
+ ~ Cookie set: _session_id => 71987223121a31c81b0fb6cf340b091c -- {"path"=>"/"}
+ ~ {:action_time=>0.00115, :after_filters_time=>1.9e-05, :before_filters_time=>0.0001}
+ ~ Cookie set: _session_id => 68a3d983b173593bd57e18d96303379c -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries/1
+ ~ {:action_time=>0.001238, :after_filters_time=>1.8e-05, :before_filters_time=>9.5e-05}
+ ~ Cookie set: _session_id => 67e8b3220e673757c61a623a27955ac0 -- {"path"=>"/"}
+ ~ {:action_time=>0.001078, :after_filters_time=>1.8e-05, :before_filters_time=>9.4e-05}
+ ~ Cookie set: _session_id => 5d2b95d1643c7b362ffe486ea823f076 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000787, :after_filters_time=>2.0e-05}
+ ~ Cookie set: _session_id => ac881e66cb8715fb5b4d78a73bfe943d -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000962, :after_filters_time=>2.0e-05, :before_filters_time=>0.000105}
+ ~ Cookie set: _session_id => c0059bfa2534d5677fe88f7c7362aa1f -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000848, :after_filters_time=>1.9e-05, :before_filters_time=>9.2e-05}
+ ~ Cookie set: _session_id => aff9ce0e0c55816619c37d8af8517d44 -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.001007, :after_filters_time=>1.9e-05, :before_filters_time=>9.1e-05}
+ ~ Cookie set: _session_id => 98e93fbf747cf4cf2cd8f59fae0eefba -- {"path"=>"/"}
+ ~ Redirecting to: /blog/entries
+ ~ {:action_time=>0.000881, :after_filters_time=>1.9e-05, :before_filters_time=>0.000113}
+ ~ Cookie set: _session_id => 4e76f1b3446f6e0323ff4fe43b47c9d3 -- {"path"=>"/"}
+ ~ {:action_time=>0.000526, :after_filters_time=>2.3e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => 5181ede2cfe74e2ae2e214e5dd7d75a9 -- {"path"=>"/"}
+ ~ {:action_time=>0.00051, :after_filters_time=>1.7e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => 99727c94346629c0356bd07f26ea841d -- {"path"=>"/"}
+ ~ {:action_time=>0.000493, :after_filters_time=>1.8e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => 03c52169d4099ae5719c7859e30baa41 -- {"path"=>"/"}
+ ~ {:action_time=>0.00083, :after_filters_time=>2.0e-05, :before_filters_time=>3.7e-05}
+ ~ Cookie set: _session_id => 8e022d04b32787cc6c12d01a73981be5 -- {"path"=>"/"}
+ ~ {:action_time=>0.003329, :after_filters_time=>2.0e-05, :before_filters_time=>3.7e-05}
+ ~ Cookie set: _session_id => 33ff32a36ca02347cce28f072c3e2c4b -- {"path"=>"/"}
+ ~ {:action_time=>0.000733, :after_filters_time=>1.9e-05, :before_filters_time=>3.4e-05}
+ ~ Cookie set: _session_id => 85b5e64863f1388c6aff28c338a00e37 -- {"path"=>"/"}
+ ~ {:action_time=>0.000745, :after_filters_time=>2.0e-05, :before_filters_time=>3.3e-05}
+ ~ Cookie set: _session_id => 61a737956df6667067eccb2d40ff67ee -- {"path"=>"/"}
+ ~ {:action_time=>0.000589, :after_filters_time=>1.9e-05, :before_filters_time=>3.5e-05}
+ ~ Cookie set: _session_id => 64c44b4d37ac94ea59df024ba2022ee7 -- {"path"=>"/"}
+ ~ {:action_time=>0.000497, :after_filters_time=>1.9e-05, :before_filters_time=>3.1e-05}
+ ~ Cookie set: _session_id => 13c8d0cccd498d008134f7a94f18ab95 -- {"path"=>"/"}
+ ~ {:action_time=>0.000516, :after_filters_time=>1.8e-05, :before_filters_time=>3.2e-05}
+ ~ Cookie set: _session_id => 24d88ebebb84040ee09097a3b98b7c3b -- {"path"=>"/"}
+ ~ {:action_time=>0.000475, :after_filters_time=>1.8e-05, :before_filters_time=>3.1e-05}
