@@ -1,15 +1,16 @@
 class Comments < Application
   # provides :xml, :yaml, :js
+  before :admin_required, :only => [ :edit, :update, :destroy, :index, :show ]
 
   def index
     @comments = Comment.all
-    display @comments
+    render
   end
 
   def show
     @comment = Comment.get(params[:id])
-    raise NotFound unless @comment
-    display @comment
+    #raise NotFound unless @comment
+    render
   end
 
   def new
@@ -21,14 +22,14 @@ class Comments < Application
   def edit
     only_provides :html
     @comment = Comment.get(params[:id])
-    raise NotFound unless @comment
+    #raise NotFound unless @comment
     render
   end
 
   def create
-    @comment = Comment.new(params[:comment])
-    if @comment.save
-      redirect url(:comment, @comment)
+    @comment = Comment.create(params[:comment])
+    if @comment.valid?
+      redirect url(:entry_comments, @comment)
     else
       render :new
     end
@@ -36,22 +37,24 @@ class Comments < Application
 
   def update
     @comment = Comment.get(params[:id])
-    raise NotFound unless @comment
-    if @comment.update_attributes(params[:comment]) || !@comment.dirty?
-      redirect url(:comment, @comment)
+    #raise NotFound unless @comment
+    if @comment.update_attributes(params[:comment])
+      redirect url(:entry_comment, @comment)
     else
-      raise BadRequest
+      render :edit
     end
   end
 
   def destroy
+    @entry   = Entry.get(params[:entry_id])
     @comment = Comment.get(params[:id])
-    raise NotFound unless @comment
-    if @comment.destroy
-      redirect url(:comment)
-    else
-      raise BadRequest
-    end
+    #raise NotFound unless @comment
+    @comment.destroy rescue nil
+    redirect url(:entry, @entry) + '/comments'
+    #if @comment.destroy
+    #  redirect url(:entry_comment, @entry)
+    #else
+    #  raise BadRequest
+    #end
   end
-
 end

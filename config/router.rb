@@ -28,7 +28,10 @@ Merb::Router.prepare do |r|
     :action     => 'archive'
   )
 
-  r.resources :entries
+  r.resources :entries do |entry|
+    entry.resources :comments
+  end
+
   r.resources :sessions
   r.resources :sites
 

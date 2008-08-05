@@ -31,7 +31,7 @@ class Sites < Application
   def create
     @site = Site.create(params[:site])
     if @site.valid?
-      redirect url(:site)
+      redirect url(:sites)
     else
       render :new
     end

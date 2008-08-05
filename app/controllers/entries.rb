@@ -29,7 +29,7 @@ class Entries < Application
   def create
     @entry = Entry.create(params[:entry])
     if @entry.valid?
-      redirect url(:entry)
+      redirect url(:entries)
     else
       render :new
     end

@@ -5,7 +5,7 @@ module CommentSpecHelper
     end
     
     def controller_class
-      Comment
+      Comments
     end
     
     def required_fields
@@ -16,14 +16,14 @@ module CommentSpecHelper
       @@time ||= DateTime.now
     end
     
-    def valid_attributes
+    def valid_attributes(params={})
       {
         :name       => 'tester',
         :url        => 'http://test.at',
         :mail       => 'test@test.at',
         :text       => "## comment \nsome text",
         :created_at => cached_time
-      }
+      }.merge(params)
     end
 
     def update_attributes(params={})
