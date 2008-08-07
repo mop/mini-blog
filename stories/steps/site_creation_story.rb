@@ -1,53 +1,7 @@
-def session
-  @session ||= {}
-end
-
-def path_prefix
-  Merb.config[:path_prefix]
-end
-
-def do_get(path)
-  get path do |controller|
-    controller.stub!(:session).and_return(session)
-  end
-end
-
-def do_post(path, params={})
-  post path, params do |controller|
-    controller.stub!(:session).and_return(session)
-  end
-end
-
-def do_put(path, params={})
-  put path, params do |controller|
-    controller.stub!(:session).and_return(session)
-  end
-end
-
 steps_for(:site_creation_story) do
+  shared_session_steps
   Given "a user" do
     Site.auto_migrate!
-  end
-  
-  Given "visiting /sessions/new" do
-    @controller = get "/sessions/new"
-  end
-  
-  Given "filling in the correct credentials" do
-    @controller.body.should have_tag(
-      "input", :name => 'user', :type => 'text'
-    )
-    @controller.body.should have_tag(
-      "input", :name => 'password', :type => 'password'
-    )
-    @controller = post('/sessions/', { 
-      'user'     => 'test',
-      'password' => 'testpw' 
-    }) do |controller|
-      controller.stub!(:session).and_return(session)
-      controller.should_receive(:authorize).with('test', 'testpw').
-          and_return(true)
-    end
   end
 
   Given "visiting /sites" do

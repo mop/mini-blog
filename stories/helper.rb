@@ -6,6 +6,16 @@ require 'spec/story'
 
 require 'merb_stories'
 
+require 'stories/shared_steps/initializer.rb'
+Dir['stories/shared_steps/**/*.rb'].each do |shared_file|
+  require shared_file unless shared_file.match(/initializer.rb$/)
+end
+Dir['stories/matchers/**/*.rb'].each do |shared_file|
+  require shared_file
+end
+
+Spec::Story::World.send(:include, CustomEntryMatchers)
+
 class MerbStory
   # Include your custom helpers here
   include Merb::Test::RequestHelper

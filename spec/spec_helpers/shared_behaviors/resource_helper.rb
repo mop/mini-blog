@@ -4,7 +4,7 @@
 
 module ResourceHelper
   module ResourceHelperGroupMethods
-    ########################## index ##########################################
+    ######################### index ##########################################
 
     # Specs for the index action of the controller
     def index_specs(params)
@@ -60,7 +60,7 @@ module ResourceHelper
       end
     end
 
-    ################################ show #####################################
+    ############################### show #####################################
 
     # Specs for the show action of the controller
     def show_specs(params)
@@ -88,7 +88,7 @@ module ResourceHelper
     def show_regular_specs(params)
       describe controller_class, "show action" do
         before(:each) do
-          @item = mock(:item)
+          @item = merb_model_mock('item')
         end
 
         def do_get
@@ -99,7 +99,7 @@ module ResourceHelper
         end
 
         it 'should fetch the correct element on get' do
-          model_class.should_receive(:get).with('1')
+          model_class.should_receive(:get).with('1').and_return(@item)
           do_get
         end
         
@@ -115,7 +115,7 @@ module ResourceHelper
       end
     end
 
-    ########################## new ############################################
+    ######################### new ############################################
     # Specs for the new action of the controller
     def new_specs(params)
       if params[:auth_actions].include? :new
@@ -164,7 +164,7 @@ module ResourceHelper
     end
     
    
-    ########################## new ############################################
+    ######################### create #########################################
     # Specs for the create action of the controller
     def create_specs(params)
       if params[:auth_actions].include? :create
@@ -550,10 +550,20 @@ module ResourceHelper
 
     def stub_nested_get
       params = send(controller_class.to_s.downcase)
+      my_name = model_class.to_s.downcase.pluralize.to_sym
+
       name = params[:nested_in].to_s.singularize
       klass = name.to_const_string
+
+      proxy_mock = mock('proxy')
+      eval <<-code
+      def proxy_mock.create(params)
+        #{model_class}.create(params.merge(:#{name}_id => '1'))
+      end
+      code
+
       Kernel.const_get(klass).stub!(:get).with('1').
-        and_return(mock('elem', :id => '1'))
+        and_return(mock('elem', :id => '1', my_name => proxy_mock))
     end
 
     def index_path

@@ -27,7 +27,8 @@ class Comments < Application
   end
 
   def create
-    @comment = Comment.create(params[:comment])
+    @entry = Entry.get(params[:entry_id])
+    @comment = @entry.comments.create(params[:comment])
     if @comment.valid?
       redirect url(:entry_comments, @comment)
     else

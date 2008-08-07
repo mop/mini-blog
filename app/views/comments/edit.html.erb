@@ -1,14 +1,16 @@
-<h1>Comments controller, edit action</h1>
-
-<p>Edit this file in <tt>app/views/comments/edit.html.erb</tt></p>
+<h1>Edit comment</h1>
 
 <%= error_messages_for :comment %>
 
-<% form_for(@comment, :action => url(:comment, @comment)) do %>
+<% form_for(@comment, :action => url(:entry_comment, @comment)) do %>
+  <%= text_control :name, :label => "Name: " %>
+  <%= text_control :url, :label => "Name: " %>
+  <%= text_control :mail, :label => "Name: " %>
+  <%= text_control :text, :label => "Name: " %>
   <p>
     <%= submit_button "Update" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', url(:comment, @comment) %> |
-<%= link_to 'Back', url(:comments) %>
+<%= link_to 'Show', url(:entry_comment, @comment) %> |
+<%= link_to 'Back', url(:entry_comments, @comment) %>

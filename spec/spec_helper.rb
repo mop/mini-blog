@@ -8,6 +8,7 @@ DataMapper.auto_migrate!
 dir = File.dirname(__FILE__)
 require "#{dir}/spec_helpers/model_helpers"
 require "#{dir}/spec_helpers/shared_behaviors"
+require "#{dir}/spec_helpers/stub_helpers"
 
 Spec::Runner.configure do |config|
   config.include(Merb::Test::ViewHelper)

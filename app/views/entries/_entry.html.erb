@@ -1,4 +1,4 @@
-<i><%= entry.created_at.strftime("%m.%d.%Y %H:%M") %></i>
+<i><%= entry.created_at.strftime("%m.%d.%Y %H:%M") %> | Comments (<%= entry.comments.count %>)</i>
 <h2><a href="<%= url(:permalink_entry, entry) %>" id="entry_<%= entry.id %>"><%= entry.title %></a></h2>
 <div class="entry">
   <%= entry.html_text %>

@@ -19,21 +19,27 @@ describe "A new entry" do
   it_should_cache_markdown(:text, :html_text)
   it_should_create_permalinks_on :title
   it_should_verify_uniqueness_of :title => 'test'
-  it_should_have_many :entries
+  it_should_have_many :comments
+end
+
+def date_yielder
+  2.times do |year|
+    2.times do |month|
+      2.times do |day|
+        yield [ (2000 + year), (1 + month), (1 + day) ]
+      end
+    end
+  end
 end
 
 describe Entry, '#group_for_archive' do
   before(:each) do
-    2.times do |year|
-      2.times do |month|
-        2.times do |day|
-          entry = create(
-            :created_at => Time.gm(2000 + year, 1 + month, 1 + day),
-            :title => "newtitle #{year} #{month} #{day}"
-          )
-          entry.save
-        end
-      end
+    date_yielder do |year, month, day|
+      entry = create(
+        :created_at => Time.gm(year, month, day),
+        :title => "newtitle #{year} #{month} #{day}"
+      )
+      entry.save
     end
     @entries = Entry.group_for_archive
   end

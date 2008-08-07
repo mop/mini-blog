@@ -26,7 +26,7 @@ Merb::Router.prepare do |r|
   r.match('/entries/archive').to(
     :controller => 'entries',
     :action     => 'archive'
-  )
+  ).name(:archive_entries)
 
   r.resources :entries do |entry|
     entry.resources :comments

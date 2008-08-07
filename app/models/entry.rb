@@ -14,7 +14,7 @@ class Entry
   property :created_at,    DateTime, :nullable => false
   property :permalink,     String
 
-  has n, :entries
+  has n, :comments
 
   validates_is_unique :title
 

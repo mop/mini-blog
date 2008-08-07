@@ -52,24 +52,28 @@ describe Entries, 'show action with permalinks' do
       controller.stub!(:render)
     end
   end
+
+  def entry_mock
+    @entry_mock ||= merb_model_mock('entry')
+  end
   
   it 'should fetch the item with the id' do
-    Entry.should_receive(:get).with('1').and_return(:show)
+    Entry.should_receive(:get).with('1').and_return(entry_mock)
     do_get
   end
 
   it 'should be successful' do
-    Entry.stub!(:get).and_return(:show)
+    Entry.stub!(:get).and_return(entry_mock)
     do_get.should be_successful
   end
 
   it 'should even fetch the item if the permalink is wrong' do
-    Entry.stub!(:get).and_return(:show)
+    Entry.stub!(:get).and_return(entry_mock)
     do_get(:permalink => 'something').should be_successful
   end
 
   it 'should have the correct route' do
-    Entry.should_receive(:get).with('1').and_return(:show)
+    Entry.should_receive(:get).with('1').and_return(entry_mock)
     get('/entries/1/title') do |controller|
       controller.stub!(:render)
     end.should be_successful

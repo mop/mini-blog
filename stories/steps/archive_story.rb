@@ -2,6 +2,14 @@ def path_prefix
   Merb.config[:path_prefix]
 end
 
+def date_yielder
+  2.times do |year|
+    2.times do |month|
+      yield [ (year + 2000), (month + 1) ]
+    end
+  end
+end
+
 steps_for(:archive_story) do
   Given "a user" do
     
@@ -10,14 +18,12 @@ steps_for(:archive_story) do
   Given "a list of entries" do
     @entries = []
     Entry.all.destroy!
-    2.times do |year|
-      2.times do |month|
-        @entries << Entry.create(
-          :title => "entry in #{1 + month} #{2000 + year}",
-          :text  => "shouldn't be displayed",
-          :created_at => Time.gm(2000 + year, 1 + month)
-        )
-      end
+    date_yielder do |year, month|
+      @entries << Entry.create(
+        :title      => "entry in #{month} #{year}",
+        :text       => "shouldn't be displayed",
+        :created_at => Time.gm(year, month)
+      )
     end
   end
 
@@ -26,33 +32,15 @@ steps_for(:archive_story) do
   end
   
   Then "a list of all posts should be displayed" do
-    @controller.body.should match(/entry in 1 2000/)
-    @controller.body.should match(/entry in 2 2000/)
-    @controller.body.should match(/entry in 2 2001/)
-    @controller.body.should match(/entry in 1 2001/)
+    date_yielder do |year, month|
+      @controller.body.should match(/entry in #{month} #{year}/)
+    end
   end
 
   Then "a list of links should be displayed" do
-    @controller.body.should have_tag(
-      "a", 
-      :href => 
-        "#{path_prefix}/entries/#{@entries[0].id}/#{@entries[0].permalink}"
-    )
-    @controller.body.should have_tag(
-      "a",
-      :href => 
-        "#{path_prefix}/entries/#{@entries[1].id}/#{@entries[1].permalink}"
-    )
-    @controller.body.should have_tag(
-      "a", 
-      :href => 
-        "#{path_prefix}/entries/#{@entries[2].id}/#{@entries[2].permalink}"
-    )
-    @controller.body.should have_tag(
-      "a", 
-      :href => 
-        "#{path_prefix}/entries/#{@entries[3].id}/#{@entries[3].permalink}"
-    )
+    4.times do |i|
+      @controller.body.should have_permalink(@entries[i])
+    end
   end
 
   Then "no text should be displayed" do
@@ -64,12 +52,9 @@ steps_for(:archive_story) do
   end
 
   When "clicking on an entry" do
-    @controller.body.should have_tag(
-      "a", 
-      :href => 
-        "#{path_prefix}/entries/#{@entries[0].id}/#{@entries[0].permalink}"
-    )
-    @controller = get("/entries/#{@entries[0].id}/#{@entries[0].permalink}")
+    entry = @entries.first
+    @controller.body.should have_permalink(entry)
+    @controller = get(url(:permalink_entry, entry))
   end
 
   Then "the entry page should be shown" do

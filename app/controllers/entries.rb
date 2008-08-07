@@ -8,7 +8,8 @@ class Entries < Application
   end
 
   def show
-    @entry = Entry.get(params[:id])
+    @entry   = Entry.get(params[:id])
+    @comment = Comment.new(:entry => @entry)
     render
   end
 

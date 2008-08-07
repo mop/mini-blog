@@ -6,28 +6,26 @@ Story: Some story about update_entry_story
   
   Scenario: Unauthorized access
     Given an user
-    And a sample entry
-    And visiting unauthorized /entries/1/title
+    And a entry
+    And visiting /entries/1/title
     When clicking unauthorized on edit entries
     Then he should be redirected to /entries
 
   Scenario: Authorized access
     Given an user
-    And a sample entry
+    And a entry
     And visiting /sessions/new
     And filling in the correct credentials
-    And submitting the form
-    And visiting authorized /entries/1/title
+    And visiting /entries/1/title
     When clicking authorized on edit entries
-    Then the edit form should be displayed
+    Then the entry form should be displayed for updateing
 
   Scenario: Authorized update
     Given an user
-    And a sample entry
+    And a entry
     And visiting /sessions/new
     And filling in the correct credentials
-    And submitting the form
-    And visiting authorized /entries/1/title
+    And visiting /entries/1/title
     And clicking authorized on edit entries
     When filling out the form and submitting
     Then the entry should be modified
