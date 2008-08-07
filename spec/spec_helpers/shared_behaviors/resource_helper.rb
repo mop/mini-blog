@@ -462,18 +462,62 @@ module ResourceHelper
 
     # Checks if the controller is resourceful. 
     # It might take the following parameters as hash
-    # [auth_method]  the method which is used to authenticate the user. It 
-    #                might be a method like :logged_in? or something similar.
-    # [auth_actions] an array of methods, which should be checked for
-    #                authentication
-    # [nested_in]    an symbol which indicates if the resource is nested into
-    #                another resource
-    # [redirect_update_path] An alternative redirection-path which should be
-    #                        checked after the update-action is performed
-    # [redirect_destroy_path] An alternative redirection-path which should be
-    #                        checked after the destroy-action is performed
-    # [redirect_create_path] An alternative redirection-path which should be
-    #                        checked after the create-action is performed
+    #
+    # ==== Parameters
+    # params<Hash>:: An options hash which might include the following keys:
+    #
+    # ==== Options (params)
+    # :auth_method<Symbol>::  
+    #   the method which is used to authenticate the user. It 
+    #   might be a method like :logged_in? or something similar.
+    # :auth_actions<Array>::
+    #   an array of methods, which should be checked for authentication. The
+    #   elements are symbols.
+    # :nested_in<Symbol>::    
+    #   an symbol which indicates if the resource is nested into
+    #   another resource
+    # :redirect_update_path<String>:: 
+    #   An alternative redirection-path which should be checked after the 
+    #   update-action is performed
+    # :redirect_destroy_path<String>: 
+    #   An alternative redirection-path which should be checked after the 
+    #   destroy-action is performed
+    # :redirect_create_path<String>: 
+    #   An alternative redirection-path which should be checked after the 
+    #   create-action is performed
+    # :excludes<Array>:
+    #   An array of symbols which indicate whether an action should be excluded
+    #   from testing.
+    #
+    # ==== Examples
+    #   describe Posts do
+    #     include ResourceHelper
+    #     include PostSpecHelper    # include some meta information
+    #     it_should_be_resourceful  # checks a regular controller
+    #   end
+    #
+    #   describe AdminPosts do
+    #     include ResourceHelper
+    #     include PostSpecHelper
+    #     it_should_be_resourceful(
+    #       :auth_method => :logged_in?,
+    #       :auth_actions => [ :index, :update, :create, :edit, ....],
+    #     )
+    #   end
+    #
+    #   describe Comments do
+    #     include ResourceHelper
+    #     include CommentSpecHelper
+    #     it_should_be_resourceful(
+    #       :nested_in => :posts,
+    #       :excludes => [ :index, :show, ... ],
+    #       :redirect_update_path  => '/posts/1',
+    #       :redirect_create_path  => '/posts/1',
+    #       :redirect_destroy_path => '/posts/1',
+    #     )
+    #   end
+    # ---
+    # @public
     def it_should_be_resourceful(params={})
       auth_method = params[:auth_method] || :no_auth_method
       default = {

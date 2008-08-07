@@ -1,5 +1,8 @@
 module ValidationHelper
   module ValidationHelperGroupMethods
+    # This method checks all required_fields for assignment.
+    # ---
+    # @public
     def it_should_assign_attributes
       required_fields.each do |field|
         it "should have a #{field}-field" do
@@ -9,7 +12,9 @@ module ValidationHelper
       end
     end
 
-    # TODO: Refactor this
+    # This method checks all required_fields if they are really required.
+    # ---
+    # @public
     def it_should_validate_required
       required_fields.each do |field|
         it "should not be valid without #{field}" do
@@ -24,6 +29,12 @@ module ValidationHelper
       end
     end
 
+    # Checks if the givven attributes are valid
+    #
+    # ==== Parameters
+    # attrs<Array>:: A list of attributes 
+    # ---
+    # @public
     def it_should_verify_uniqueness_of(attrs)
       attrs.each_pair do |key, val|
         it "should only allow one #{key}" do
@@ -38,6 +49,20 @@ module ValidationHelper
       end
     end
 
+    # Checks if the tested class has a has_many-relationship with the given
+    # klass.
+    #
+    # ==== Parameters
+    # :klass<Symbol>::
+    #   This is the class of the 
+    #
+    # ==== Example
+    # describe Post do
+    #   include PostSpecHelper   # include meta information
+    #   it_should_have_many :comments
+    # end
+    # ---
+    # @public
     def it_should_have_many(klass)
       inject_meta_attribute(klass)
       create_has_many_spec(klass)
@@ -90,6 +115,19 @@ module ValidationHelper
       EOF
     end
 
+    # Checks if the tested class have a belongs_to relationship with the given
+    # klass.
+    #
+    # ==== Parameters
+    # :klass<Symbol>:: A symbol which indicates the other class-name
+    #
+    # ==== Example
+    # describe Comment do
+    #   include CommentSpecHelper   # include meta information
+    #   it_should_belong_to :post
+    # end
+    # ---
+    # @public
     def it_should_belong_to(klass)
       inject_meta_attribute(klass)
       create_belongs_to_spec(klass)
