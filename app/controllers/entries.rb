@@ -10,7 +10,7 @@ class Entries < Application
   def show
     @entry   = Entry.get(params[:id])
     @comment = Comment.new(:entry => @entry)
-    render
+    display @entry
   end
 
   def delete

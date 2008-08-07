@@ -1,6 +1,6 @@
 class Comments < Application
-  # provides :xml, :yaml, :js
   before :admin_required, :only => [ :edit, :update, :destroy, :index, :show ]
+  provides :html, :js
 
   def new
     only_provides :html
@@ -18,10 +18,22 @@ class Comments < Application
     @entry = Entry.get(params[:entry_id])
     @comment = @entry.comments.create(params[:comment])
     if @comment.valid?
-      redirect url(:entry, @entry)
+      # respond_to > provides?!
+      # Obviously this is a huge hack, but since the format is somehow lost on
+      # a redirect I'll get the whole page back in the ajax request, which
+      # sucks. 
+      if params[:format] == 'js'
+        partial(
+          '/entries/comment', 
+          :format => 'html',
+          :with   => @comment
+        ) # practically beats purity :D
+      else
+        redirect url(:entry, @entry)
+      end
     else
       @entry.reload
-      render :template => 'entries/show.html'
+      render :template => '/entries/show'
     end
   end
 

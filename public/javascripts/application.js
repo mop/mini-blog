@@ -83,7 +83,20 @@ Event.observe(window, 'load', function() {
     });
   });
   $$('#comments button').each(function(elem) {
-    alert(elem);
-	});
+    Event.observe(elem, 'click', function(e) {
+      var form = $$('#comments form')[0];
+      var content = Form.serialize(form);
+      new Ajax.Request(form.getAttribute('action') + '.js', {
+        method: 'post',
+        parameters: content,
+        onSuccess: function(result) {
+          form.previous().previous().insert({
+            before: result.responseText
+           });
+          new Effect.Highlight(form.previous().previous().previous());
+      }});
+      Event.stop(e);
+      return false;
+  })});
 });
 

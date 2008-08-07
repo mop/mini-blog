@@ -1,5 +1,17 @@
 module Merb
   module GlobalHelpers
+    # Returns the name of the comment. If a url or a mail is given a link is
+    # made out of the name. Otherwise simply the name is returned.
+    def comment_title(comment)
+      if comment.url != ""
+        "<a href=\"#{h(comment.url)}\">#{h(comment.name)}</a>"
+      elsif comment.mail != ""
+        "<a href=\"mailto:#{h(comment.mail.split('@').join(" NOSPAM dot "))}\">#{h(comment.name)}</a>"
+      else
+        h(comment.name)
+      end
+    end
+
     # helpers defined here available to all views.  
     def date_control(col, attrs = {})
 
