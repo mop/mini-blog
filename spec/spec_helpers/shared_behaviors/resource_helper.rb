@@ -1,11 +1,15 @@
 # TODO
-# * Refactor the global params stuff into a global variable
-# * Maybe explicit exclusion of methods would be good
+# * Refactor each group into an separate module, because the file is actually
+#   very long and the flog-results are _very_ bad, because of nesting blocks
+#   into methods :(.
 
+# This module contains the single magic it_should_be_resourceful method, which
+# generates tests for your controller on the fly. If you are browsing this code
+# with your text-editor make shure you have folding enabled, because otherwise
+# you'll definitely loose the overview over this module :/
 module ResourceHelper
   module ResourceHelperGroupMethods
     ######################### index ##########################################
-
     # Specs for the index action of the controller
     def index_specs(params)
       if params[:auth_actions].include? :index
@@ -61,7 +65,6 @@ module ResourceHelper
     end
 
     ############################### show #####################################
-
     # Specs for the show action of the controller
     def show_specs(params)
       if params[:auth_actions].include? :show 
@@ -220,7 +223,7 @@ module ResourceHelper
         end
 
         def item_mock(flag=true) 
-          tmp = mock('item', :valid? => flag)
+          tmp = merb_model_mock('item', :valid? => flag)
           stub_nested(tmp) if nested?
           tmp
         end
@@ -234,7 +237,7 @@ module ResourceHelper
 
         it 'should redirect the the user on success' do
           model_class.stub!(:create).and_return(item_mock)
-          do_post.should redirect_to(index_path)
+          do_post.should redirect_to(redirect_create_path)
         end
 
         it 'should display the new page again on failure' do
@@ -245,7 +248,7 @@ module ResourceHelper
     end
 
 
-    ########################## new ############################################
+    ########################## edit ###########################################
     # Specs for the edit action of the controller
     def edit_specs(params)
       if params[:auth_actions].include? :edit
@@ -295,7 +298,7 @@ module ResourceHelper
       end
     end
 
-    ########################## new ############################################
+    ########################## update #########################################
     # Specs for the update action of the controller
     def update_specs(params)
       if params[:auth_actions].include? :update
@@ -351,7 +354,7 @@ module ResourceHelper
         end
 
         def create_item_mock(rv=true)
-          item = mock(item_name, :update_attributes => rv, :id => '1')
+          item = merb_model_mock(item_name, :update_attributes => rv)
           stub_nested(item) if nested?
           item
         end
@@ -371,7 +374,7 @@ module ResourceHelper
 
         it 'should redirect to the show-path' do
           model_class.stub!(:get).with('1').and_return(item_mock)
-          do_post.should redirect_to("#{index_path}/1")
+          do_post.should redirect_to(redirect_update_path)
         end
         
         it 'should render the edit again on failure' do
@@ -420,7 +423,7 @@ module ResourceHelper
         end
 
         def item_mock
-          @item_mock ||= mock(item_name, :id => '1', :destroy => true)
+          @item_mock ||= merb_model_mock(item_name, :destroy => true)
         end
 
         it 'should fetch the item' do
@@ -436,12 +439,12 @@ module ResourceHelper
 
         it 'should redirect to the index' do
           model_class.stub!(:get).and_return(item_mock)
-          do_post.should redirect_to(index_path)
+          do_post.should redirect_to(redirect_destroy_path)
         end
         
         it 'should redirect to the index if not found' do
           model_class.stub!(:get).and_return(nil)
-          do_post.should redirect_to(index_path)
+          do_post.should redirect_to(redirect_destroy_path)
         end
       end
     end
@@ -459,17 +462,28 @@ module ResourceHelper
 
     # Checks if the controller is resourceful. 
     # It might take the following parameters as hash
-    # [auth_method] the method which is used to authenticate the user. It might
-    # be a method like :logged_in? or something similar.
+    # [auth_method]  the method which is used to authenticate the user. It 
+    #                might be a method like :logged_in? or something similar.
     # [auth_actions] an array of methods, which should be checked for
-    # authentication
+    #                authentication
+    # [nested_in]    an symbol which indicates if the resource is nested into
+    #                another resource
+    # [redirect_update_path] An alternative redirection-path which should be
+    #                        checked after the update-action is performed
+    # [redirect_destroy_path] An alternative redirection-path which should be
+    #                        checked after the destroy-action is performed
+    # [redirect_create_path] An alternative redirection-path which should be
+    #                        checked after the create-action is performed
     def it_should_be_resourceful(params={})
       auth_method = params[:auth_method] || :no_auth_method
       default = {
         :auth_actions => [],
         :auth_method  => :no_auth_method,
-        :nested_in    => nil
+        :nested_in    => nil,
+        :excludes     => []
       }.merge(params)
+
+      default[:excludes] = [* default[:excludes]]
 
       self.class_eval <<-EOF
         def auth_method
@@ -477,15 +491,15 @@ module ResourceHelper
         end
       EOF
 
-      inject_params(params)
+      inject_params(default)
 
-      index_specs(default)
-      show_specs(default)
-      new_specs(default)
-      create_specs(default)
-      edit_specs(default)
-      update_specs(default)
-      destroy_specs(default)
+      index_specs(default) unless default[:excludes].include? :index
+      show_specs(default) unless default[:excludes].include? :show
+      new_specs(default) unless default[:excludes].include? :new
+      create_specs(default) unless default[:excludes].include? :create
+      edit_specs(default) unless default[:excludes].include? :edit
+      update_specs(default) unless default[:excludes].include? :update
+      destroy_specs(default) unless default[:excludes].include? :destroy
     end
   end
 
@@ -527,6 +541,8 @@ module ResourceHelper
       result.merge(:id => id)
     end
 
+    # Creates a parameter hash for post/put-requests and merges them with
+    # parameters of nested routes
     def hash_params(hash={})
       params = send(controller_class.to_s.downcase)
       if params[:nested_in]
@@ -535,19 +551,22 @@ module ResourceHelper
       hash
     end
 
+    # Returns true if the controller is nested
     def nested?
       params = send(controller_class.to_s.downcase)
       !params[:nested_in].nil?
     end
 
+    # Returns a stub for the outer element of the nested controller
     def stub_nested(elem)
       params = send(controller_class.to_s.downcase)
       name = params[:nested_in].to_s.singularize
-      elem.stub!(name).and_return(mock('elem', :id => '1'))
+      elem.stub!(name).and_return(merb_model_mock('elem'))
       elem.stub!("#{name}_id").and_return('1')
       elem
     end
 
+    # Creates a stub for the get-mehtod of the outer resource
     def stub_nested_get
       params = send(controller_class.to_s.downcase)
       my_name = model_class.to_s.downcase.pluralize.to_sym
@@ -563,9 +582,11 @@ module ResourceHelper
       code
 
       Kernel.const_get(klass).stub!(:get).with('1').
-        and_return(mock('elem', :id => '1', my_name => proxy_mock))
+        and_return(merb_model_mock('elem', my_name => proxy_mock))
     end
 
+    # Returns the index-path of the controller
+    # If the controller is nested the nested element is returned.
     def index_path
       params = send(controller_class.to_s.downcase)
       if nested? 
@@ -573,6 +594,30 @@ module ResourceHelper
       else
         "#{path_prefix}/#{items_name}"
       end
+    end
+
+    # Returns the path which should be expected to be redirected to after an
+    # updated
+    def redirect_update_path
+      params = send(controller_class.to_s.downcase)
+      return params[:redirect_update_path] if params[:redirect_update_path]
+      "#{index_path}/1"
+    end
+
+    # Returns the path which should be expected to be redirected to after a
+    # destroy
+    def redirect_destroy_path
+      params = send(controller_class.to_s.downcase)
+      return params[:redirect_destroy_path] if params[:redirect_destroy_path]
+      index_path
+    end
+
+    # Returns the path which should be expected to be redirected to after a
+    # create
+    def redirect_create_path
+      params = send(controller_class.to_s.downcase)
+      return params[:redirect_create_path] if params[:redirect_create_path]
+      index_path
     end
   end
 

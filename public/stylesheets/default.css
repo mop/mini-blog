@@ -5,17 +5,17 @@ body {
   background: #fff url(../images/gradient.png) repeat-x;
 }
 
-h1, h2, h3 {
+#content h1, h2, h3 {
   color: #ff4c4c;
   font-family: Georgia serif;
 }
 
-h2 {
+#content h2 {
   font-size: 24px;
   margin: 0px 0px 0px;
 }
 
-h3 {
+#content h3 {
   font-size: 20px;
   margin: 0px 0px 0px;
 }
@@ -137,4 +137,39 @@ textarea {
   width: 500px;
   height: 350px;
 }
+
+/*****************************************************************************
+ * comment
+ *****************************************************************************/
+
+#comments .comment h1, h2, h3, h4, h5, h6 {
+  color: #ff4c4c;
+  font-family: Georgia serif;
+  font-size: 12px;
+  margin: 0px;
+}
+
+#comments .comment h4 a {
+  color: #ff4c4c;
+  font-family: Georgia serif;
+  font-size: 12px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+#comments textarea {
+  width: 373px;
+  height: 150px;
+}
+
+#comments button {
+  float: left;
+  clear: both;
+}
+
+#comments .error h2 {
+  color: #0dbd00;
+  font-size: 14px;
+}
+
 

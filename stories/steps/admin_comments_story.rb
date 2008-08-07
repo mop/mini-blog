@@ -37,12 +37,16 @@ steps_for(:admin_comments_story) do
       :form,
       :action => "#{path_prefix}#{url(:entry_comment, @comment)}"
     )
-    [ 'name', 'url', 'mail', 'text' ].each do |name|
+    [ 'name', 'url', 'mail' ].each do |name|
       @controller.body.should have_tag(
         :input, 
         :name => "comment[#{name}]"
       )
     end
+    @controller.body.should have_tag(
+      :textarea,
+      :name => "comment[text]"
+    )
   end
   
   When "submitting the form" do

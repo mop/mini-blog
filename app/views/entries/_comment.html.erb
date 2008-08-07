@@ -1,7 +1,7 @@
 <div class="comment">
   <i><%= comment.created_at.strftime("%m.%d.%Y %H:%M") %></i>
-  <h3> <%=h comment.name %> </h3>
-<%= comment.html_text %>
+  <h4><%= comment_title(comment) %></h4>
+  <%= comment.html_text %>
   <% admin do %>
     <a href="<%= url(:edit_entry_comment, comment) %>">Edit</a>
     <a href="<%= url(:entry_comment, comment) %>" class="delete">Delete</a>

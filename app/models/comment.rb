@@ -7,6 +7,10 @@ class Comment
   end
   include MarkdownFilter
 
+  before :create do
+    self.created_at = Time.now
+  end
+
   property :id, Serial
   property :name, String, :nullable => false
   property :mail, String

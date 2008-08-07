@@ -11,6 +11,26 @@ describe Comment do
   it_should_cache_markdown(:text, :html_text, :filter_code => false)
 end
 
+describe Comment, 'created_at field' do
+  include CommentSpecHelper
+  before(:each) do
+    @comment = Comment.new(valid_attributes)
+    @comment.created_at = nil
+  end
+
+  it 'should fill the created_at column after save' do
+    @comment.save
+    @comment.created_at.should_not be_nil
+  end
+
+  it 'should not update the created_at column on update' do
+    @comment.save
+    cached = @comment.created_at
+    @comment.save
+    cached.should eql(@comment.created_at)
+  end
+end
+
 describe Comment, 'xss filtering' do
   include CommentSpecHelper
 
