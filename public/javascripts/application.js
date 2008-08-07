@@ -82,5 +82,8 @@ Event.observe(window, 'load', function() {
       return delete_link(elem);
     });
   });
+  $$('#comments button').each(function(elem) {
+    alert(elem);
+	});
 });
 
