@@ -9,51 +9,15 @@ var Comment = Class.create({
     this.url  = url;
   },
 
-  onSuccess: function(cb) {
-    this.callback = cb;
-  },
-
-  formElements: function() {
-    var id = this.id.toString();
-    var elements = [ 'name', 'url', 'mail' ].map(function(name) {
-      var val = this[name];
-      if (val == undefined) val = '';
-      return new Element('input', { 
-        name: 'comment[name]',
-        value: val,
-        id: 'comment_' + id + '_' + name 
-      });
-    });
-
-    elements[elements.length] = new Element('textarea', {
-      name: 'comment[text]',
-      id: 'comment_' + id + '_text'
-    }) 
-    elements[elements.length - 1].insert(this.text);
-    return elements;
-  },
-
-  formLabels: function() {
-    var id = this.id.toString();
-    return [ 'name', 'url', 'mail', 'text'].map(function(name) {
-      var label = new Element('label', { 
-        for: 'comment_' + id + '_' + name 
-      });
-      label.insert(name);
-      return label;
-    });
-  },
-
   fetch: function() {
     var comment = this;
-    new Ajax.Request(this.url, {
+    var time = new Date().getTime();
+    new Ajax.Request(this.url + "?time=" + time, {
       method: 'get',
-      onSuccess: function(response) {
-        comment.text = response.responseText;
-        comment.callback();
-      }
+      evalScripts: true,
+      asynchronous: true
     });
-  },
+  }
 });
 
 function markdown_preview(url, elem, preview, link) {
@@ -94,17 +58,23 @@ function markdown_fade(url, elem, preview, link)
       new Effect.Fade(link.up(), { sync: true })
   ], {
     afterFinish: function() {
+      var cache = $(elem).value;
       new Effect.Move(elem, { x: -100, mode: 'absolute', duration: 0 });
       new Effect.Parallel([
         new Effect.Move(elem, { x: 0, mode: 'absolute', sync: true }),
         new Effect.Appear(elem, { sync: true }),
         new Effect.Appear(link.up(), { sync: true })
-      ]);
+      ], {
+        afterFinish: function() {
+          $(elem).value = cache;      // I hate you Safari!!!11
+        }
+      });
       $(link).update("Preview");
       $(link).onclick = function() {
         markdown_preview(url, elem, preview, link);
         return false;
       }
+      $(elem).select();
     }
   });
 }
@@ -125,50 +95,11 @@ function delete_link(elem) {
   return false;
 }
 
-/**
- * Returns the id of the current entry
- */
-function entry_id() {
-  return $$('h2 a')[0].getAttribute("id").replace(/entry_/, '');
-}
-
-function ajaxify_edit_form(form) {
-  var button = $(form.getElementsByTagName('button')[0]);
-  Event.observe(button, 'click', function(e) {
-    var content = Form.serialize(form);
-    new Ajax.Request(form.getAttribute('action') + '.js', {
-      method: 'post',
-      parameters: content,
-      onSuccess: function(result) {
-        form.previous().previous().previous().insert({
-          before: result.responseText
-        });
-        var updated_element = form.previous().previous().previous().previous();
-        updated_element.select('a').each(ajaxify_edit);
-        new Effect.Highlight(updated_element);
-        form.previous().remove();   // <h3>
-        form.previous().remove();   // <br/>
-        form.previous().remove();   // <div>
-        form.remove();
-      },
-    });
-    Event.stop(e);
-  });
-}
-
 function ajaxify_edit(elem) {
   if (!elem.match(/\/edit$/)) return;
   Event.observe(elem, 'click', function(e) {
     var url = elem.href.replace(/http:\/\/.+?\//, "/");
     var comment = new Comment(url);
-    comment.onSuccess(function() {
-      var div = elem.up('.comment');
-      div.hide();
-      var br   = new Element('br');
-      div.insert({before: br});
-      div.insert({after: comment.text});
-      ajaxify_edit_form(div.next().next());
-    });
     comment.fetch();
     Event.stop(e);
   });

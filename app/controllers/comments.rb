@@ -37,6 +37,9 @@ class Comments < Application
   end
 
   def update
+    headers["Last-Modified"] = (Time.now + 10).httpdate
+    headers["Expires"] = '0'
+    headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0, pre-check=0, post-check=0'
     @comment = Comment.get(params[:id])
     if @comment.update_attributes(params[:comment])
       # respond_to > provides?!
@@ -44,21 +47,13 @@ class Comments < Application
       # a redirect I'll get the whole page back in the ajax request, which
       # sucks. 
       if params[:format] == 'js'
-        partial(
-          '/entries/comment', 
-          :format => 'html',
-          :with   => @comment
-        ) # practically beats purity :D
+        render # practically beats purity :D
       else
         redirect url(:entry, @comment.entry)
       end
     else
       if params[:format] == 'js'
-        partial(
-          '/entries/comment', 
-          :format => 'html',
-          :with   => @comment
-        ) # practically beats purity :D
+        render
       else
         render :edit
       end

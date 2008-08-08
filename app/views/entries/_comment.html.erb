@@ -1,4 +1,4 @@
-<div class="comment">
+<div class="comment" id="comment_<%= comment.id %>">
   <i><%= comment.created_at.strftime("%m.%d.%Y %H:%M") %></i>
   <h4><%= comment_title(comment) %></h4>
   <%= comment.html_text %>

@@ -1,7 +1,7 @@
 # This controller is used for previewing markdown
 class MarkdownConverter < Application
   include MarkdownConvertHelper
-  before :admin_required
+  before :admin_required, :exclude => [ :preview ]
 
   def index
     str = convert(

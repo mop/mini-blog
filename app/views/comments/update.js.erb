@@ -1,0 +1,4 @@
+$('comment_<%= @comment.id %>').update('<%= escape_js(partial '/entries/comment', :format => 'html', :with => @comment) %> ');
+new Effect.Highlight($('comment_<%= @comment.id %>'));
+
+$$('#comment_<%= @comment.id %> a').each(ajaxify_edit);

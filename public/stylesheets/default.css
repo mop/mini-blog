@@ -24,6 +24,11 @@ body {
   margin-top: 0px;
 }
 
+#content button { 
+  clear: both;
+  float: left;
+}
+
 #archive p {
   margin: 0px;
   margin-bottom: 10px;
@@ -149,6 +154,10 @@ textarea {
   margin: 0px;
 }
 
+#comments .comment {
+  clear: both;
+}
+
 #comments .comment h4 a {
   color: #ff4c4c;
   font-family: Georgia serif;
@@ -160,6 +169,7 @@ textarea {
 #comments textarea {
   width: 373px;
   height: 150px;
+  float: left;
 }
 
 #comments button {

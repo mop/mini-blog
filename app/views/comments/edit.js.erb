@@ -1,13 +1,15 @@
-<h3>Edit comment</h3>
+$('comment_<%= @comment.id %>').update('<%= escape_js(render :template => '/comments/edit.html', 'format' => 'html').split("\n").join('') %>');
+$('comment_<%= @comment.id %>').select('h3')[0].hide();
+var form = $$('#comment_<%= @comment.id %> form')[0];
+var button = $$('#comment_<%= @comment.id %> button')[0];
 
-<%= error_messages_for :comment %>
+form.onsubmit = function() {
+  new Ajax.Request(form.getAttribute('action') + '.js', {
+    method: 'post',
+    parameters: Form.serialize(this),
+    evalScripts: true,
+    asynchronous: true
+  });
+  return false;
+}
 
-<% form_for(@comment, :action => url(:entry_comment, @comment)) do %>
-  <%= text_control :name, :label => "*Name: " %>
-  <%= text_control :url, :label => "URL: " %>
-  <%= text_control :mail, :label => "Mail: " %>
-  <%= text_area_control :text, :label => "*Text: " %>
-  <p>
-    <%= submit_button "Update" %>
-  </p>
-<% end %>

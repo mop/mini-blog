@@ -37,16 +37,13 @@ describe Comments, 'javascript update' do
 
       con.stub!(:logged_in?).and_return(true)
       con.stub!(:render)
-      con.stub!(:partial)
       yield con if block_given?
     end
   end
 
-  it 'should render the partial' do
+  it 'should render the template' do
     do_put do |controller|
-      controller.should_receive(:partial).with(
-        '/entries/comment', :format => 'html', :with => @comment
-      )
+      controller.should_receive(:render)
     end
   end
 
@@ -57,12 +54,10 @@ describe Comments, 'javascript update' do
     do_put
   end
 
-  it 'should render the partial even though update_attributes failed' do
+  it 'should render the template even though update_attributes failed' do
     @comment.stub!(:update_attributes).and_return(false)
     do_put do |controller|
-      controller.should_receive(:partial).with(
-        '/entries/comment', :format => 'html', :with => @comment
-      )
+      controller.should_receive(:render)
     end
   end
 

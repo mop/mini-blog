@@ -51,7 +51,7 @@ describe MarkdownConverter, 'preview action' do
       :markdown => markdown
     ) do |controller|
 
-      controller.stub!(:logged_in?).and_return(true)
+      controller.stub!(:logged_in?).and_return(false)
       yield controller if block_given?
     end
   end
