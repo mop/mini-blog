@@ -53,7 +53,15 @@ class Comments < Application
         redirect url(:entry, @comment.entry)
       end
     else
-      render :edit
+      if params[:format] == 'js'
+        partial(
+          '/entries/comment', 
+          :format => 'html',
+          :with   => @comment
+        ) # practically beats purity :D
+      else
+        render :edit
+      end
     end
   end
 

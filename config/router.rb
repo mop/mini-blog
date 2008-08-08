@@ -56,6 +56,11 @@ Merb::Router.prepare do |r|
     :action     => 'index'
   ).name(:markdown_preview)
 
+  r.match('/markdown_preview/preview').to(
+    :controller => 'markdown_converter',
+    :action     => 'preview'
+  ).name(:markdown_preview_save)
+
   # This is the default route for /:controller/:action/:id
   # This is fine for most cases.  If you're heavily using resource-based
   # routes, you may want to comment/remove this line to prevent

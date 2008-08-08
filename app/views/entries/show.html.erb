@@ -8,7 +8,9 @@
     <%= text_control :name, :label => 'Name*:' %>
     <%= text_control :url, :label => 'Homepage:' %>
     <%= text_control :mail, :label => 'Mail:' %>
-    <%= text_area_control :text, :label => 'Comment*:' %>
-    <%= submit_button 'Create Comment' %>
+    <div style="clear:both;">
+      <%= text_area_control :text, :label => 'Comment*:' %>
+      <%= submit_button 'Create Comment' %>
+    </div>
   <% end %>
 </div>

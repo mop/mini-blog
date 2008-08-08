@@ -9,4 +9,10 @@ class MarkdownConverter < Application
     )
     render str, :layout => false
   end
+
+  def preview
+    str = convert(
+      h(params[:markdown])
+    )
+  end
 end

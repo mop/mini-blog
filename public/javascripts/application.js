@@ -78,6 +78,7 @@ function markdown_preview(url, elem, preview, link) {
           $(link).update("Hide");
           $(link).onclick = function() {
             markdown_fade(url, elem, preview, link);
+            return false;
           }
         }
       });
@@ -102,6 +103,7 @@ function markdown_fade(url, elem, preview, link)
       $(link).update("Preview");
       $(link).onclick = function() {
         markdown_preview(url, elem, preview, link);
+        return false;
       }
     }
   });
@@ -172,6 +174,55 @@ function ajaxify_edit(elem) {
   });
 }
 
+function insert_preview(elem) {
+  var prefix = elem.up('form').getAttribute('action').replace(
+    /\/?(.*?)\/entries\/\d+\/comments/, "/$1"
+  ); // filter the prefix 
+  if (prefix == '/') prefix = '';
+  var div  = new Element('div', { 
+    id: 'comment_preview',
+    style: 'clear:both;' 
+  });
+  var link = new Element('a', {
+    href: (prefix + '/markdown_preview/preview'),
+    style: 'float:left;'
+  });
+  link.insert('Preview');
+
+  elem.insert({ before: div });
+  elem.insert({ after: link });
+
+  nbsp = new Element('span', { style: 'float: left;' });
+  nbsp.update('&nbsp;&nbsp;');
+  link.insert({ before: nbsp });
+
+  link.onclick = function() {
+    markdown_preview(link.href, 'comment_text', 'comment_preview', link);
+    return false;
+  }
+}
+
+function ajaxify_create(elem) {
+  insert_preview(elem);
+  Event.observe(elem, 'click', function(e) {
+    var form = $$('#comments form')[0];
+    var content = Form.serialize(form);
+    new Ajax.Request(form.getAttribute('action') + '.js', {
+      method: 'post',
+      parameters: content,
+      onSuccess: function(result) {
+        form.previous().previous().insert({
+          before: result.responseText
+         });
+        var new_element = form.previous().previous().previous();
+        new Effect.Highlight(new_element);
+        new_element.select('a').each(ajaxify_edit);
+    }});
+    Event.stop(e);
+    return false;
+  })
+}
+
 Event.observe(window, 'load', function() {
   $$('.delete').each(function(elem) {
     Event.observe(elem, 'click', function(e) {
@@ -191,24 +242,7 @@ Event.observe(window, 'load', function() {
     });
   });
 
-  $$('#comments button').each(function(elem) {
-    Event.observe(elem, 'click', function(e) {
-      var form = $$('#comments form')[0];
-      var content = Form.serialize(form);
-      new Ajax.Request(form.getAttribute('action') + '.js', {
-        method: 'post',
-        parameters: content,
-        onSuccess: function(result) {
-          form.previous().previous().insert({
-            before: result.responseText
-           });
-          new Effect.Highlight(form.previous().previous().previous());
-      }});
-      Event.stop(e);
-      return false;
-    })
-  });
-
+  $$('#comments button').each(ajaxify_create);
   $$('#comments a').each(ajaxify_edit);
 });
 
