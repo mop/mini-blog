@@ -1,3 +1,61 @@
+/**
+ * This class represents an comment and is used to fetch comments via json
+ */
+var Comment = Class.create({
+  /**
+   * Initializes the comment via an URL of the comment
+   */
+  initialize: function(url) {
+    this.url  = url;
+  },
+
+  onSuccess: function(cb) {
+    this.callback = cb;
+  },
+
+  formElements: function() {
+    var id = this.id.toString();
+    var elements = [ 'name', 'url', 'mail' ].map(function(name) {
+      var val = this[name];
+      if (val == undefined) val = '';
+      return new Element('input', { 
+        name: 'comment[name]',
+        value: val,
+        id: 'comment_' + id + '_' + name 
+      });
+    });
+
+    elements[elements.length] = new Element('textarea', {
+      name: 'comment[text]',
+      id: 'comment_' + id + '_text'
+    }) 
+    elements[elements.length - 1].insert(this.text);
+    return elements;
+  },
+
+  formLabels: function() {
+    var id = this.id.toString();
+    return [ 'name', 'url', 'mail', 'text'].map(function(name) {
+      var label = new Element('label', { 
+        for: 'comment_' + id + '_' + name 
+      });
+      label.insert(name);
+      return label;
+    });
+  },
+
+  fetch: function() {
+    var comment = this;
+    new Ajax.Request(this.url, {
+      method: 'get',
+      onSuccess: function(response) {
+        comment.text = response.responseText;
+        comment.callback();
+      }
+    });
+  },
+});
+
 function markdown_preview(url, elem, preview, link) {
   new Ajax.Request(url, {
     parameters: { markdown: $(elem).value },
@@ -65,6 +123,55 @@ function delete_link(elem) {
   return false;
 }
 
+/**
+ * Returns the id of the current entry
+ */
+function entry_id() {
+  return $$('h2 a')[0].getAttribute("id").replace(/entry_/, '');
+}
+
+function ajaxify_edit_form(form) {
+  var button = $(form.getElementsByTagName('button')[0]);
+  Event.observe(button, 'click', function(e) {
+    var content = Form.serialize(form);
+    new Ajax.Request(form.getAttribute('action') + '.js', {
+      method: 'post',
+      parameters: content,
+      onSuccess: function(result) {
+        form.previous().previous().previous().insert({
+          before: result.responseText
+        });
+        var updated_element = form.previous().previous().previous().previous();
+        updated_element.select('a').each(ajaxify_edit);
+        new Effect.Highlight(updated_element);
+        form.previous().remove();   // <h3>
+        form.previous().remove();   // <br/>
+        form.previous().remove();   // <div>
+        form.remove();
+      },
+    });
+    Event.stop(e);
+  });
+}
+
+function ajaxify_edit(elem) {
+  if (!elem.match(/\/edit$/)) return;
+  Event.observe(elem, 'click', function(e) {
+    var url = elem.href.replace(/http:\/\/.+?\//, "/");
+    var comment = new Comment(url);
+    comment.onSuccess(function() {
+      var div = elem.up('.comment');
+      div.hide();
+      var br   = new Element('br');
+      div.insert({before: br});
+      div.insert({after: comment.text});
+      ajaxify_edit_form(div.next().next());
+    });
+    comment.fetch();
+    Event.stop(e);
+  });
+}
+
 Event.observe(window, 'load', function() {
   $$('.delete').each(function(elem) {
     Event.observe(elem, 'click', function(e) {
@@ -76,12 +183,14 @@ Event.observe(window, 'load', function() {
       return delete_link(elem);
     });
   });
+
   $$('.delete-noconfirm').each(function(elem) {
     Event.observe(elem, 'click', function(e) {
       Event.stop(e);
       return delete_link(elem);
     });
   });
+
   $$('#comments button').each(function(elem) {
     Event.observe(elem, 'click', function(e) {
       var form = $$('#comments form')[0];
@@ -97,6 +206,9 @@ Event.observe(window, 'load', function() {
       }});
       Event.stop(e);
       return false;
-  })});
+    })
+  });
+
+  $$('#comments a').each(ajaxify_edit);
 });
 

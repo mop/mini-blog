@@ -172,4 +172,8 @@ textarea {
   font-size: 14px;
 }
 
+#comments form {
+  width: auto;
+  height: auto;
+}
 

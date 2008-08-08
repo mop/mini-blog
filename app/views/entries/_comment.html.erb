@@ -3,7 +3,10 @@
   <h4><%= comment_title(comment) %></h4>
   <%= comment.html_text %>
   <% admin do %>
-    <a href="<%= url(:edit_entry_comment, comment) %>">Edit</a>
+    <a 
+      id="commment_<%= comment.id %>_edit" 
+      href="<%= url(:edit_entry_comment, comment) %>"
+    >Edit</a>
     <a href="<%= url(:entry_comment, comment) %>" class="delete">Delete</a>
   <% end %>
 </div>

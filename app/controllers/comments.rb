@@ -9,7 +9,6 @@ class Comments < Application
   end
 
   def edit
-    only_provides :html
     @comment = Comment.get(params[:id])
     render
   end
@@ -40,7 +39,15 @@ class Comments < Application
   def update
     @comment = Comment.get(params[:id])
     if @comment.update_attributes(params[:comment])
-      redirect url(:entry, @comment.entry)
+      if params[:format] == 'js'
+        partial(
+          '/entries/comment', 
+          :format => 'html',
+          :with   => @comment
+        ) # practically beats purity :D
+      else
+        redirect url(:entry, @comment.entry)
+      end
     else
       render :edit
     end
