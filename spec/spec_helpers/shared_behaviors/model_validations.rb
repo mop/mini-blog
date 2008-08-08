@@ -1,10 +1,10 @@
 module ValidationHelper
   module ValidationHelperGroupMethods
-    # This method checks all required_fields for assignment.
+    # This method checks all valid_attributes for assignment.
     # ---
     # @public
     def it_should_assign_attributes
-      required_fields.each do |field|
+      valid_attributes.keys.each do |field|
         it "should have a #{field}-field" do
           elem = model_class.new(valid_attributes)
           elem.send(field).should eql(valid_attributes[field])
@@ -12,11 +12,15 @@ module ValidationHelper
       end
     end
 
-    # This method checks all required_fields if they are really required.
+    # This method checks all given fields whether they are required
+    #
+    # ==== Parameters
+    # *required<~to-s>:: 
+    #   Fields which should be required, otherwise the model shouldn't be valid
     # ---
     # @public
-    def it_should_validate_required
-      required_fields.each do |field|
+    def it_should_validate_required_for(*required)
+      required.each do |field|
         it "should not be valid without #{field}" do
           elem = model_class.new(valid_attributes)
           elem.send("#{field}=", nil)
@@ -29,7 +33,7 @@ module ValidationHelper
       end
     end
 
-    # Checks if the givven attributes are valid
+    # Checks if the given attributes are valid
     #
     # ==== Parameters
     # attrs<Array>:: A list of attributes 

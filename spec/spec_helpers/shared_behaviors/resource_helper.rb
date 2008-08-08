@@ -19,7 +19,6 @@ module ResourceHelper
     end
 
     def index_auth_specs(params)
-      @params = params
       describe controller_class, "unauthorized index action" do
         def do_get
           dispatch_to(controller_class, :index, no_id_params) do |controller|
@@ -38,6 +37,7 @@ module ResourceHelper
       describe controller_class, "index action" do
         before(:each) do
           @items = []
+          model_class.stub!(:all).and_return(@items)
         end
 
         def do_get
@@ -53,12 +53,10 @@ module ResourceHelper
         end
 
         it 'should assign items' do
-          model_class.stub!(:all).and_return(@items)
           do_get.assigns(items_name).should eql(@items)
         end
 
         it 'should be successful' do
-          model_class.stub!(:all).and_return(@items)
           do_get.should be_successful
         end
       end
@@ -92,6 +90,7 @@ module ResourceHelper
       describe controller_class, "show action" do
         before(:each) do
           @item = merb_model_mock('item')
+          model_class.stub!(:get).and_return(@item)
         end
 
         def do_get
@@ -107,12 +106,10 @@ module ResourceHelper
         end
         
         it 'should be successful' do
-          model_class.stub!(:get).and_return(@item)
           do_get.should be_successful
         end
         
         it 'should assign the item variable' do
-          model_class.stub!(:get).and_return(@item)
           do_get.assigns(item_name).should eql(@item)
         end
       end
@@ -143,6 +140,10 @@ module ResourceHelper
 
     def new_regular_specs(params)
       describe controller_class, 'new page authorized' do
+        before(:each) do
+          model_class.stub!(:new).and_return(:true)
+        end
+
         def do_get
           dispatch_to(controller_class, :new, no_id_params) do |controller|
             controller.stub!(:render)
@@ -155,7 +156,6 @@ module ResourceHelper
         end
 
         it 'should assign the item-variable' do
-          model_class.stub!(:new).and_return(:true)
           do_get.assigns(item_name).should eql(:true)
         end
 
@@ -274,6 +274,10 @@ module ResourceHelper
     
     def edit_regular_specs(params)
       describe controller_class, 'authorized edit' do
+        before(:each) do 
+          model_class.stub!(:get).and_return(:edit)
+        end
+
         def do_get
           dispatch_to(controller_class, :edit, id_params('1')) do |controller|
             controller.stub!(:render)
@@ -282,7 +286,6 @@ module ResourceHelper
         end
 
         it 'should be successful' do
-          model_class.stub!(:get).and_return(:edit)
           do_get.should be_successful
         end
 
@@ -292,7 +295,6 @@ module ResourceHelper
         end
         
         it 'should assign the item to an attribute' do
-          model_class.stub!(:get).and_return(:edit)
           do_get.assigns(item_name).should eql(:edit)
         end
       end
@@ -332,6 +334,7 @@ module ResourceHelper
     def update_regular_specs(params)
       describe controller_class, 'authorized update' do
         before(:each) do
+          model_class.stub!(:get).with('1').and_return(item_mock)
           stub_nested_get if nested?
         end
 
@@ -349,12 +352,12 @@ module ResourceHelper
           end
         end
 
-        def item_mock(rv=true)
-          @item_mock ||= create_item_mock(rv)
+        def item_mock
+          @item_mock ||= create_item_mock
         end
 
-        def create_item_mock(rv=true)
-          item = merb_model_mock(item_name, :update_attributes => rv)
+        def create_item_mock
+          item = merb_model_mock(item_name, :update_attributes => true)
           stub_nested(item) if nested?
           item
         end
@@ -365,7 +368,6 @@ module ResourceHelper
         end
         
         it 'should update the item' do
-          model_class.stub!(:get).with('1').and_return(item_mock)
           item_mock.should_receive(:update_attributes).with(hash_including(
             update_attributes
           ))
@@ -373,12 +375,10 @@ module ResourceHelper
         end
 
         it 'should redirect to the show-path' do
-          model_class.stub!(:get).with('1').and_return(item_mock)
           do_post.should redirect_to(redirect_update_path)
         end
         
         it 'should render the edit again on failure' do
-          model_class.stub!(:get).with('1').and_return(item_mock)
           item_mock.stub!(:update_attributes).and_return(false)
           do_post.should be_successful
         end
@@ -412,6 +412,7 @@ module ResourceHelper
     def destroy_regular_specs(params)
       describe controller_class, 'authorized destroy' do
         before(:each) do
+          model_class.stub!(:get).and_return(item_mock)
           stub_nested_get if nested?
         end
         
@@ -432,18 +433,15 @@ module ResourceHelper
         end
         
         it 'should destroy it' do
-          model_class.stub!(:get).and_return(item_mock)
           item_mock.should_receive(:destroy)
           do_post
         end
 
         it 'should redirect to the index' do
-          model_class.stub!(:get).and_return(item_mock)
           do_post.should redirect_to(redirect_destroy_path)
         end
         
         it 'should redirect to the index if not found' do
-          model_class.stub!(:get).and_return(nil)
           do_post.should redirect_to(redirect_destroy_path)
         end
       end
@@ -556,16 +554,54 @@ module ResourceHelper
       controller_class.to_s.downcase.to_sym
     end
 
+    # Just a simple helper methods which returns the path-prefix of merb
+    #
+    # ==== Returns 
+    # String:: A path prefix
     def path_prefix
       Merb.config[:path_prefix]
     end
 
+    # Returns the name of the id-attribute of the nested class. 
+    #
+    # ==== Returns
+    # String:: The prefix of the nested element
+    #
+    # ==== Example
+    # describe Comments do 
+    #   it_should_be_resourceful(..., :nested_in => :entries)
+    #
+    # end
+    # # somewhere in this module:
+    # nested_id_name # => returns: "entry_id"
+    #
     def nested_id_name
       params = send(controller_class.to_s.downcase)
       params[:nested_in].to_s.downcase.singularize + "_id"
     end
     
     # Returns a parameter hash for the index, create, .. action
+    #
+    # ==== Returns
+    # Hash:: 
+    #   a hash which includes the id of the outer element if the class is
+    #   nested. Otherwise an empty hash will be returned
+    #
+    # ==== Example
+    # describe Comments do
+    #   it_should_be_resourceful(..., :nested_in => :entries)
+    # end
+    # 
+    # # somewhere in this module:
+    # no_id_params # => { 'entry_id' => '1' }
+    #
+    # # ...
+    # describe Entries do
+    #   it_should_be_resourceful(...)
+    # end
+    #
+    # # somewhere in this module:
+    # no_id_params # => { }
     def no_id_params
       params = send(controller_class.to_s.downcase)
       result = {}
@@ -576,6 +612,30 @@ module ResourceHelper
     end
 
     # Returns the id parameter hash for updating/editing/... an item
+    #
+    # ==== Parameters
+    # id<~to-s>:: The id which should be included in the result-hash
+    #
+    # ==== Returns
+    # Hash:: 
+    #   a hash which includes the id of the outer element if the class is
+    #   nested and the given id. Otherwise an hash with the id will be returned
+    #
+    # ==== Example
+    # describe Comments do
+    #   it_should_be_resourceful(..., :nested_in => :entries)
+    # end
+    # 
+    # # somewhere in this module:
+    # id_params('1') # => { 'id' => '1', 'entry_id' => '1' }
+    #
+    # # ...
+    # describe Entries do
+    #   it_should_be_resourceful(...)
+    # end
+    #
+    # # somewhere in this module:
+    # id_params('1') # => { 'id' => '1' }
     def id_params(id)
       params = send(controller_class.to_s.downcase)
       result = {}
@@ -587,6 +647,32 @@ module ResourceHelper
 
     # Creates a parameter hash for post/put-requests and merges them with
     # parameters of nested routes
+    #
+    # ==== Parameters
+    # hash<Hash>:: An hash which should be merged with the foreign id.
+    #
+    # ==== Returns
+    # Hash:: 
+    #   a hash which includes the id of the outer element if the class is
+    #   nested and the given hash. Otherwise the given hash will be returned.
+    #
+    # ==== Example
+    # describe Comments do
+    #   it_should_be_resourceful(..., :nested_in => :entries)
+    # end
+    # 
+    # # somewhere in this module:
+    # hash_params { 'id' => '1', 'param' => 'val'}
+    # # => { 'id' => '1', 'param' => 'val', 'entry_id' => '1' }
+    #
+    # # ...
+    # describe Entries do
+    #   it_should_be_resourceful(...)
+    # end
+    #
+    # # somewhere in this module:
+    # hash_params { 'id' => '1', 'param' => 'val' } 
+    # # => { 'id' => '1', 'param' => 'val' }
     def hash_params(hash={})
       params = send(controller_class.to_s.downcase)
       if params[:nested_in]
@@ -595,22 +681,55 @@ module ResourceHelper
       hash
     end
 
-    # Returns true if the controller is nested
+    # Indicates whether the controller is nested
+    # 
+    # ==== Returns
+    # Boolean:: true if the controller is nested. Otherwise false.
     def nested?
       params = send(controller_class.to_s.downcase)
       !params[:nested_in].nil?
     end
 
     # Returns a stub for the outer element of the nested controller
+    #
+    # ==== Parameters
+    # elem<Spec::Mocks::Mock>:: 
+    #   This element represents a model-instance of this controller. It's
+    #   "getter"-method for the parent-model and it's
+    #   id-"getter"-method for the parent-model will be stubbed.
+    #
+    # ==== Returns
+    # Spec::Mocks::Mock:
+    #   The given mock will be returned but will be altered.
+    #
+    # ==== Example
+    # 
+    # # somewhere in a spec in this module:
+    # comment = merb_model_stub('comment')
+    # comment = stub_nested(comment)
+    # comment.entry_id  # => 1
+    # comment.entry     # => Spec::Mocks::Mock
     def stub_nested(elem)
       params = send(controller_class.to_s.downcase)
       name = params[:nested_in].to_s.singularize
       elem.stub!(name).and_return(merb_model_mock('elem'))
-      elem.stub!("#{name}_id").and_return('1')
+      elem.stub!(nested_id_name).and_return('1')
       elem
     end
 
-    # Creates a stub for the get-mehtod of the outer resource
+    # Creates a stub for the get-method of the outer resource
+    #
+    # ==== Example
+    #
+    # # somewhere in a spec in this module with our Comment and Entry-resources
+    # stub_nested_get
+    # entry = Entry.get('1')    # => Spec::Mocks::Mock<'elem'>
+    # entry.comments            # => Spec::Mocks::Mock<'proxy'>
+    #
+    # # The following statement mapps to the call: 
+    # # Comment.create({ :name => 'test', :entry_id => '1' })
+    # # You might check for this in your specs
+    # entry.comments.create(:name => 'test') 
     def stub_nested_get
       params = send(controller_class.to_s.downcase)
       my_name = model_class.to_s.downcase.pluralize.to_sym
@@ -631,6 +750,27 @@ module ResourceHelper
 
     # Returns the index-path of the controller
     # If the controller is nested the nested element is returned.
+    #
+    # ==== Returns
+    # String::
+    #   A string is returned which indicates the index-path
+    #
+    # ==== Example
+    # describe Entries do
+    #   it_should_be_resourceful(...)
+    # end
+    #
+    # # somewhere in this module:
+    # index_path
+    # # => /YOUR_OPTIONAL_PATH_PREFIX/entries
+    #
+    # describe Comments do
+    #   it_should_be_resourceful(..., :nested_in => :entries)
+    # end
+    #
+    # # somewhere in this module:
+    # index_path
+    # # => /YOUR_OPTIONAL_PATH_PREFIX/entries/1/comments
     def index_path
       params = send(controller_class.to_s.downcase)
       if nested? 
@@ -642,6 +782,28 @@ module ResourceHelper
 
     # Returns the path which should be expected to be redirected to after an
     # updated
+    #
+    # ==== Returns
+    # String::
+    #   A String representing the redirection-path after an successful 
+    #   update-action
+    #
+    # ==== Example
+    # describe Entries do
+    #   it_should_be_resourceful(...)
+    # end
+    #
+    # # somewhere in this module:
+    # redirect_update_path
+    # # => /YOUR_OPTIONAL_PATH_PREFIX/entries
+    #
+    # describe Comments do
+    #   it_should_be_resourceful(..., :redirect_update_path => '/entries/1')
+    # end
+    #
+    # # somewhere in this module:
+    # redirect_update_path
+    # # => /YOUR_OPTIONAL_PATH_PREFIX/entries/1
     def redirect_update_path
       params = send(controller_class.to_s.downcase)
       return params[:redirect_update_path] if params[:redirect_update_path]
@@ -650,6 +812,28 @@ module ResourceHelper
 
     # Returns the path which should be expected to be redirected to after a
     # destroy
+    #
+    # ==== Returns
+    # String::
+    #   A String representing the redirection-path after an successful 
+    #   destroy-action
+    #
+    # ==== Example
+    # describe Entries do
+    #   it_should_be_resourceful(...)
+    # end
+    #
+    # # somewhere in this module:
+    # redirect_destroy_path
+    # # => /YOUR_OPTIONAL_PATH_PREFIX/entries
+    #
+    # describe Comments do
+    #   it_should_be_resourceful(..., :redirect_destroy_path => '/entries/1')
+    # end
+    #
+    # # somewhere in this module:
+    # redirect_destroy_path
+    # # => /YOUR_OPTIONAL_PATH_PREFIX/entries/1
     def redirect_destroy_path
       params = send(controller_class.to_s.downcase)
       return params[:redirect_destroy_path] if params[:redirect_destroy_path]
@@ -658,6 +842,28 @@ module ResourceHelper
 
     # Returns the path which should be expected to be redirected to after a
     # create
+    #
+    # ==== Returns
+    # String::
+    #   A String representing the redirection-path after an successful 
+    #   destroy-action
+    #
+    # ==== Example
+    # describe Entries do
+    #   it_should_be_resourceful(...)
+    # end
+    #
+    # # somewhere in this module:
+    # redirect_create_path
+    # # => /YOUR_OPTIONAL_PATH_PREFIX/entries
+    #
+    # describe Comments do
+    #   it_should_be_resourceful(..., :redirect_create_path => '/entries/1')
+    # end
+    #
+    # # somewhere in this module:
+    # redirect_create_path
+    # # => /YOUR_OPTIONAL_PATH_PREFIX/entries/1
     def redirect_create_path
       params = send(controller_class.to_s.downcase)
       return params[:redirect_create_path] if params[:redirect_create_path]

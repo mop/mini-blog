@@ -6,7 +6,7 @@ describe Comment do
   include MarkdownHelper
   
   it_should_assign_attributes
-  it_should_validate_required
+  it_should_validate_required_for(:name, :text)
   it_should_belong_to :entry
   it_should_cache_markdown(:text, :html_text, :filter_code => false)
 end

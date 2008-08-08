@@ -8,10 +8,6 @@ module EntrySpecHelper
       Entries
     end
     
-    def required_fields
-      [ :title, :text, :created_at ]
-    end
-    
     def cached_time
       @@time ||= DateTime.now
     end

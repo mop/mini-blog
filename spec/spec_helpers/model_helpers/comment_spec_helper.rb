@@ -8,10 +8,6 @@ module CommentSpecHelper
       Comments
     end
     
-    def required_fields
-      [ :name, :text ]
-    end
-    
     def cached_time
       @@time ||= DateTime.now
     end
