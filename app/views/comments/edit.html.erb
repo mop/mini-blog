@@ -3,10 +3,10 @@
 <%= error_messages_for :comment %>
 
 <% form_for(@comment, :action => url(:entry_comment, @comment)) do %>
-  <%= text_control :name, :label => "Name: " %>
+  <%= text_control :name, :label => "*Name: " %>
   <%= text_control :url, :label => "URL: " %>
   <%= text_control :mail, :label => "Mail: " %>
-  <%= text_area_control :text, :label => "Text: " %>
+  <%= text_area_control :text, :label => "*Text: " %>
   <p>
     <%= submit_button "Update" %>
   </p>

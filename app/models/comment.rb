@@ -23,8 +23,4 @@ class Comment
   property :created_at, DateTime
 
   belongs_to :entry
-
-  def to_json
-    self.attributes.to_json
-  end
 end

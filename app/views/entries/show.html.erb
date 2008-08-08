@@ -5,10 +5,10 @@
   <br />
   <%= error_messages_for :comment %>
   <% form_for(@comment, :action => url(:entry_comments, @comment)) do %>
-    <%= text_control :name, :label => 'Name:' %>
+    <%= text_control :name, :label => 'Name*:' %>
     <%= text_control :url, :label => 'Homepage:' %>
     <%= text_control :mail, :label => 'Mail:' %>
-    <%= text_area_control :text, :label => 'Comment:' %>
+    <%= text_area_control :text, :label => 'Comment*:' %>
     <%= submit_button 'Create Comment' %>
   <% end %>
 </div>

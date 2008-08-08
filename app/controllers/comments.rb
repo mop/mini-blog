@@ -39,6 +39,10 @@ class Comments < Application
   def update
     @comment = Comment.get(params[:id])
     if @comment.update_attributes(params[:comment])
+      # respond_to > provides?!
+      # Obviously this is a huge hack, but since the format is somehow lost on
+      # a redirect I'll get the whole page back in the ajax request, which
+      # sucks. 
       if params[:format] == 'js'
         partial(
           '/entries/comment', 
