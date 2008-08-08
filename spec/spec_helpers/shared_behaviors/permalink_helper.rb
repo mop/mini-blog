@@ -1,5 +1,20 @@
 module PermalinkHelper
   module PermalinkHelperGroupMethods
+    # Verifies if a permalink is created on the given attribute.
+    #
+    # ==== Parameters
+    # attribute<~to_s>::
+    #   From this attribute the permalinks should be created and stored into
+    #   the permalink-attribute of the class, which should be tested.
+    #
+    # ===== Example
+    # describe Entry do
+    #   include PermalinkHelper
+    #
+    #   it_should_create_permalinks_on :title
+    # end
+    # ---
+    # @public
     def it_should_create_permalinks_on(attribute)
       class_eval <<-EOF
         def permalink_test_attribute

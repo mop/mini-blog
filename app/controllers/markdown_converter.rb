@@ -1,3 +1,4 @@
+# This controller is used for previewing markdown
 class MarkdownConverter < Application
   include MarkdownConvertHelper
   before :admin_required

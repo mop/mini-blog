@@ -4,6 +4,8 @@ module MarkdownFilter
   end
 
   module MarkdownFilterMethods
+    # This method converts the markdown-string stored in the 
+    # text-attribute and assigns it to the html_text-attribute
     def convert_markdown
       self.html_text = convert(text)
     end

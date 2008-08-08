@@ -1,5 +1,8 @@
 module MarkdownHelper
   module MarkdownHelperGroupMethods
+    # Contains the before-block of the spec
+    # ---
+    # @private
     def before_block(text_attribute, html_attribute)
       before(:each) do
         model_class.all.destroy!
@@ -7,12 +10,18 @@ module MarkdownHelper
       end
     end
 
+    # Contains the after-block of the spec
+    # ---
+    # @private
     def after_block(text_attribute, html_attribute)
       after(:each) do
         model_class.all.destroy!
       end
     end
 
+    # Contains the markdown-blocks of the spec
+    # ---
+    # @private
     def markdown_blocks(text_attribute, html_attribute)
       it 'should cache the attributes after save' do
         @elem.send("#{text_attribute}=", "## headline")
@@ -28,6 +37,9 @@ module MarkdownHelper
       end
     end
 
+    # Contains the <filter:code>-tag-blocks of the spec
+    # ---
+    # @private
     def code_parsing_blocks(text_attribute, html_attribute)
       it 'should filter and parse code' do
         @elem.send(
@@ -40,7 +52,21 @@ module MarkdownHelper
     end
 
     # Checks if the text on the text-attribute is transformed into markdown
-    # and updated after save
+    # and updated after save.
+    #
+    # ==== Parameters
+    # text_attribute<~to_s>::
+    #   The text-attribute which stores the markdown-text
+    # html_attribute<~to_s>::
+    #   The html-attribute which stores the converted html-text
+    # params<Hash>::
+    #   A list of additional parameters
+    #
+    # ==== Options (params)
+    # :filter_code::
+    #   Checks if the <filter:code>-tag should be checked. Default: true
+    # ---
+    # @public
     def it_should_cache_markdown(text_attribute, html_attribute, params={})
       default = {
         :filter_code => true
