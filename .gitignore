@@ -1,3 +1,5 @@
 development.db
 tags
 log/*
+stories/log/*
+stories/stories/log/*
