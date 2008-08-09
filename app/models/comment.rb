@@ -7,6 +7,7 @@ class Comment
     self.text = self.text.gsub(/&/, "&amp;").gsub(/\"/, "&quot;").
       gsub(/>/, "&gt;").gsub(/</, "&lt;") 
   end
+
   include MarkdownFilter    # the rest can be converted with markdown
 
   # The users shouldn't manually type the time into the comment
@@ -14,11 +15,11 @@ class Comment
     self.created_at = Time.now
   end
 
-  property :id,         Serial
-  property :name,       String, :nullable => false
+  property :id,         Integer, :serial   => true
+  property :name,       String,  :nullable => false
   property :mail,       String
   property :url,        String
-  property :text,       Text,   :nullable => false
+  property :text,       Text,    :nullable => false
   property :html_text,  Text
   property :created_at, DateTime
 
