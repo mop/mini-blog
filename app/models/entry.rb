@@ -8,6 +8,7 @@ class Entry
   include PermalinkCreator      # create the permalink from :title 
   include MarkdownFilter        # we are using markdown here
 
+  # ==== Properties
   property :id,            Integer,  :serial   => true
   property :title,         String,   :nullable => false
   property :text,          Text,     :nullable => false
@@ -15,9 +16,13 @@ class Entry
   property :created_at,    DateTime, :nullable => false
   property :permalink,     String
 
+  # ==== Associations
   has n, :comments
 
+  # ==== Validations
   validates_is_unique :title
+
+  # ==== Custom Code
 
   # This method returns the grouping for the entry-archive
   #
