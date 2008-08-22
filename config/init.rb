@@ -64,7 +64,7 @@ dependency 'dm-validations'
 Merb::BootLoader.after_app_loads do
   # dunno why this doesn't works :(
   dependency 'uv'
-  dependency 'ultraviolet'
+  #dependency 'ultraviolet'   # doesn't seem to work
   require 'uv'
   # Add dependencies here that must load after the application loads:
 
@@ -118,7 +118,6 @@ Merb::Config.use do |c|
   c[:session_store] = 'cookie'
   c[:path_prefix] = '/blog'
 end
-
 
 # ==== Tune your inflector
 

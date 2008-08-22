@@ -10,7 +10,8 @@ class Comments < Application
 
   def edit
     @comment = Comment.get(params[:id])
-    render
+    layout = content_type == :js ? false : nil
+    display @comment, :layout => layout
   end
 
   def create
@@ -23,7 +24,7 @@ class Comments < Application
       # sucks. 
       if params[:format] == 'js'
         partial(
-          '/entries/comment', 
+          'entries/comment', 
           :format => 'html',
           :with   => @comment
         ) # practically beats purity :D
@@ -37,9 +38,6 @@ class Comments < Application
   end
 
   def update
-    headers["Last-Modified"] = (Time.now + 10).httpdate
-    headers["Expires"] = '0'
-    headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0, pre-check=0, post-check=0'
     @comment = Comment.get(params[:id])
     if @comment.update_attributes(params[:comment])
       # respond_to > provides?!
