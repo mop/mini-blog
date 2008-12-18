@@ -4,7 +4,7 @@ class Entries < Application
 
   def index
     @entries = Entry.all_for_index
-    render 
+    render
   end
 
   def show

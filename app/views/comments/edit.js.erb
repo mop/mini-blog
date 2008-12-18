@@ -1,4 +1,5 @@
-$('comment_<%= @comment.id %>').update('<%= escape_js(partial 'comment_edit', :format => :html).split("\n").join('') %>');
+<% p @comment %>
+$('comment_<%= @comment.id %>').update('<%= escape_js(partial 'comment_edit', :format => :html, :comment => @comment).split("\n").join('') %>');
 $('comment_<%= @comment.id %>').select('h3')[0].hide();
 var form = $$('#comment_<%= @comment.id %> form')[0];
 var button = $$('#comment_<%= @comment.id %> button')[0];

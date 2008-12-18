@@ -20,6 +20,10 @@ module ResourceHelper
 
     def index_auth_specs(params)
       describe controller_class, "unauthorized index action" do
+        before(:each) do
+          instance_eval(&send(items_name)[:before_block])
+        end
+
         def do_get
           dispatch_to(controller_class, :index, no_id_params) do |controller|
             controller.stub!(:render)
@@ -38,6 +42,7 @@ module ResourceHelper
         before(:each) do
           @items = []
           model_class.stub!(:all).and_return(@items)
+          instance_eval(&send(items_name)[:before_block])
         end
 
         def do_get
@@ -73,6 +78,10 @@ module ResourceHelper
 
     def show_auth_specs(params)
       describe controller_class, "unauthorized show action" do
+        before(:each) do
+          instance_eval(&send(items_name)[:before_block])
+        end
+
         def do_get
           dispatch_to(controller_class, :show, no_id_params) do |controller|
             controller.stub!(:render)
@@ -91,6 +100,7 @@ module ResourceHelper
         before(:each) do
           @item = merb_model_mock('item')
           model_class.stub!(:get).and_return(@item)
+          instance_eval(&send(items_name)[:before_block])
         end
 
         def do_get
@@ -126,6 +136,10 @@ module ResourceHelper
 
     def new_auth_specs(params)
       describe controller_class, 'new page' do
+        before(:each) do
+          instance_eval(&send(items_name)[:before_block])
+        end
+
         def do_get
           dispatch_to(controller_class, :new, no_id_params) do |controller|
             controller.stub!(:render)
@@ -142,6 +156,7 @@ module ResourceHelper
       describe controller_class, 'new page authorized' do
         before(:each) do
           model_class.stub!(:new).and_return(:true)
+          instance_eval(&send(items_name)[:before_block])
         end
 
         def do_get
@@ -178,6 +193,10 @@ module ResourceHelper
 
     def create_auth_specs(params)
       describe controller_class, 'unauthorized create' do
+        before(:each) do
+          instance_eval(&send(items_name)[:before_block])
+        end
+
         def do_post(params={})
           tmp = valid_attributes(params)
 
@@ -204,6 +223,7 @@ module ResourceHelper
       describe controller_class, 'create' do
         before(:each) do
           stub_nested_get if nested?
+          instance_eval(&send(items_name)[:before_block])
         end
         
         def do_post(params={})
@@ -259,6 +279,10 @@ module ResourceHelper
 
     def edit_auth_specs(params)
       describe controller_class, 'unauthorized edit' do
+        before(:each) do
+          instance_eval(&send(items_name)[:before_block])
+        end
+
         def do_get
           dispatch_to(controller_class, :edit, id_params(1)) do |controller|
             controller.stub!(:render)
@@ -276,6 +300,7 @@ module ResourceHelper
       describe controller_class, 'authorized edit' do
         before(:each) do 
           model_class.stub!(:get).and_return(:edit)
+          instance_eval(&send(items_name)[:before_block])
         end
 
         def do_get
@@ -311,6 +336,10 @@ module ResourceHelper
 
     def update_auth_specs(params)
       describe controller_class, 'unauthorized update' do
+        before(:each) do
+          instance_eval(&send(items_name)[:before_block])
+        end
+
         def do_post(params={})
           tmp = valid_attributes(params)
 
@@ -319,7 +348,6 @@ module ResourceHelper
             :update,
             hash_params(item_name => tmp, :id => 1)
           ) do |controller|
-
             controller.stub!(:render)
           end
         end
@@ -336,6 +364,7 @@ module ResourceHelper
         before(:each) do
           model_class.stub!(:get).with('1').and_return(item_mock)
           stub_nested_get if nested?
+          instance_eval(&send(items_name)[:before_block])
         end
 
         def do_post(params={})
@@ -396,6 +425,10 @@ module ResourceHelper
 
     def destroy_auth_specs(params)
       describe controller_class, 'unauthorized destroy' do
+        before(:each) do
+          instance_eval(&send(items_name)[:before_block])
+        end
+
         def do_post
           dispatch_to(controller_class, :destroy, id_params(1)) do |controller|
             controller.stub!(:render)
@@ -414,6 +447,7 @@ module ResourceHelper
         before(:each) do
           model_class.stub!(:get).and_return(item_mock)
           stub_nested_get if nested?
+          instance_eval(&send(items_name)[:before_block])
         end
         
         def do_post
@@ -522,7 +556,8 @@ module ResourceHelper
         :auth_actions => [],
         :auth_method  => :no_auth_method,
         :nested_in    => nil,
-        :excludes     => []
+        :excludes     => [], 
+        :before_block => lambda {}
       }.merge(params)
 
       default[:excludes] = [* default[:excludes]]

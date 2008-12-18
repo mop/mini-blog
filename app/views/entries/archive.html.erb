@@ -3,7 +3,7 @@
   <h3><%= date.strftime("%B %Y") %></h3>
   <p>
     <% set.each do |entry| %>
-      <a href="<%= url(:permalink_entry, entry) %>"><%= entry.title %></a> <br/>
+      <a href="<%= url(:permalink_entry, entry.id, entry.permalink) %>"><%= entry.title %></a> <br/>
     <% end %>
   </p>
 <% end %>

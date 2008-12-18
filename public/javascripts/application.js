@@ -173,7 +173,7 @@ Event.observe(window, 'load', function() {
     });
   });
 
-  $$('#comments button').each(ajaxify_create);
+  $$('#comments input[type="submit"]').each(ajaxify_create);
   $$('#comments a').each(ajaxify_edit);
 });
 

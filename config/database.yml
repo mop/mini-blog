@@ -12,3 +12,5 @@
   <<: *defaults
   :database: production.db
 
+:rake:
+  <<: *defaults

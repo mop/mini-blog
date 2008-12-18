@@ -4,10 +4,11 @@ class Site
   include DataMapper::Resource
   
   # ==== Properties
-  property :id,         Integer,  :serial => true
+  property :id,         Integer,  :serial   => true
   property :title,      String,   :nullable => false
   property :text,       Text,     :nullable => false
-  property :created_at, DateTime, :nullable => false
+  property :created_at, DateTime, :nullable => false,
+                                  :default  => lambda { |r, p| Time.now }
   property :html_text,  Text
   property :permalink,  String
 

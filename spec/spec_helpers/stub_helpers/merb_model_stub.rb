@@ -18,10 +18,16 @@
 # Spec::Mocks::Mock::
 #   A newly created mock will be returned
 def merb_model_mock(name, params={})
-  mock(name, {
+  tmp = mock(name, {
     :new_record?       => false,
     :id                => '1',
     :attribute_loaded? => true,
     :reload            => true
   }.merge(params))
+  # Bugfix for identifiers checking
+  def tmp.is_a?(klass)
+    return true if klass == DataMapper::Resource
+    self.class::is_a?(klass)
+  end
+  tmp
 end

@@ -1,13 +1,13 @@
 <h3>Edit comment</h3>
 <%= error_messages_for :comment %>
 
-<% form_for(@comment, :action => url(:entry_comment, @comment)) do %>
-  <%= text_control :name, :label => "*Name: " %>
-  <%= text_control :url, :label => "URL: " %>
-  <%= text_control :mail, :label => "Mail: " %>
-  <%= text_area_control :text, :label => "*Text: " %>
+<%= form_for(@comment, :action => url(:entry_comment, @comment.entry_id, @comment.id)) do %>
+  <%= text_field :name, :label => "*Name: " %>
+  <%= text_field :url, :label => "URL: " %>
+  <%= text_field :mail, :label => "Mail: " %>
+  <%= text_area :text, :label => "*Text: " %>
   <p>
-    <%= submit_button "Update" %>
+    <%= submit "Update" %>
   </p>
   <input type="hidden" name="rand" value="<%= rand %>" />
-<% end %>
+<% end =%>

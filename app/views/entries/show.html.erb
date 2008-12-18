@@ -4,13 +4,13 @@
   <br />
   <br />
   <%= error_messages_for :comment %>
-  <% form_for(@comment, :action => url(:entry_comments, @comment)) do %>
-    <%= text_control :name, :label => 'Name*:' %>
-    <%= text_control :url, :label => 'Homepage:' %>
-    <%= text_control :mail, :label => 'Mail:' %>
+  <%= form_for(@comment, :action => url(:entry_comments, @entry)) do %>
+    <%= text_field :name, :label => 'Name*:' %>
+    <%= text_field :url, :label => 'Homepage:' %>
+    <%= text_field :mail, :label => 'Mail:' %>
     <div style="clear:both; float: left;">
-      <%= text_area_control :text, :label => 'Comment*:' %>
-      <%= submit_button 'Create Comment' %>
+      <%= text_area :text, :label => 'Comment*:' %>
+      <%= submit 'Create Comment' %>
     </div>
-  <% end %>
+  <% end =%>
 </div>

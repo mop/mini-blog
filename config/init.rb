@@ -60,16 +60,7 @@ dependency 'merb-assets'
 dependency 'merb_stories', '>= 0.9.3' 
 dependency 'maruku'
 dependency 'dm-validations'
-
-Merb::BootLoader.after_app_loads do
-  # dunno why this doesn't works :(
-  dependency 'uv'
-  #dependency 'ultraviolet'   # doesn't seem to work
-  require 'uv'
-  # Add dependencies here that must load after the application loads:
-
-  # dependency "magic_admin" # this gem uses the app's model classes
-end
+dependency 'ultraviolet', :require_as => 'uv'
 
 #
 # ==== Set up your ORM of choice
@@ -115,7 +106,7 @@ Merb::Config.use do |c|
   # c[:session_id_key] = '_session_id'
 
   c[:session_secret_key]  = '6202a795a09e3bcca3a93e4125f8358d5d442bdd'
-  c[:session_store] = 'cookie'
+  c[:session_store] = c[:environment] == 'test' ? 'memory' : 'cookie'
   c[:path_prefix] = '/blog'
 end
 

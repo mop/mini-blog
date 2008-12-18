@@ -8,7 +8,9 @@ describe Entries do
     :auth_method => :logged_in?,
     :auth_actions => [
       :new, :create, :update, :edit, :destroy
-    ]
+    ], :before_block => lambda do
+      Comment.stub!(:new).and_return(:comment)
+    end
   )
 end
 
@@ -40,6 +42,10 @@ describe Entries, "index action" do
 end
 
 describe Entries, 'show action with permalinks' do
+  before(:each) do
+    Comment.stub!(:new)
+  end
+
   def do_get(params={})
     dispatch_to(
       Entries,

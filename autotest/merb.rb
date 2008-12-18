@@ -9,7 +9,7 @@ class Autotest::Merb < Autotest
   # +fixtures_dir+::         the directory to find fixtures in
   attr_accessor :model_tests_dir, :controller_tests_dir, :view_tests_dir, :fixtures_dir
   
-  def initialize # :nodoc:
+  def initialize
     super
     
     initialize_test_layout
@@ -23,7 +23,7 @@ class Autotest::Merb < Autotest
     # Any changes to a file in the root of the 'lib' directory will run any 
     # model test with a corresponding name.
     add_mapping %r%^lib\/.*\.rb% do |filename, _|
-      files_matching Regexp.new(["^#{model_test_for(filename)}$"])
+      files_matching Regexp.new("^#{model_test_for(filename)}$")
     end
     
     # Any changes to a fixture will run corresponding view, controller and 
@@ -127,7 +127,7 @@ private
   #   => "login_controller_test.rb"
   #   > test_for("form", :view)
   #   => "form_view_spec.rb" # If you're running a RSpec-like suite
-  def test_for(filename, kind_of_test) # :nodoc:
+  def test_for(filename, kind_of_test)
     name  = [filename]
     name << kind_of_test.to_s if kind_of_test == :view
     name << "test"

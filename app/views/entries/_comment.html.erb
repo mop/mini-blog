@@ -5,8 +5,8 @@
   <% admin do %>
     <a 
       id="commment_<%= comment.id %>_edit" 
-      href="<%= url(:edit_entry_comment, comment) %>"
+      href="<%= url(:edit_entry_comment, comment.entry_id, comment.id) %>"
     >Edit</a>
-    <a href="<%= url(:entry_comment, comment) %>" class="delete">Delete</a>
+    <a href="<%= url(:entry_comment, comment.entry_id, comment.id) %>" class="delete">Delete</a>
   <% end %>
 </div>
