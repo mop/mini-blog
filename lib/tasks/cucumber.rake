@@ -1,7 +1,7 @@
 require 'cucumber/rake/task'
 
 cucumber_options = proc do |t|
-  t.binary        = Merb.root / 'bin' / 'cucumber'
+  #t.binary        = Merb.root / 'bin' / 'cucumber'
   t.cucumber_opts = "--format pretty"
 end
 
