@@ -23,9 +23,15 @@ Given /^some spammy comments$/ do
       :entry_id   => @entry.id,
       :text       => "comment text #{i}",
       :name       => "commenter #{i}",
-      :created_at => Time.now, 
-      :spam       => (i % 2 == 0)
+      :created_at => Time.now
     )
+  end
+
+  ids = [2, 4]
+  cs = Comment.all(:id => ids)
+  cs.each do |comment|
+  	comment.spam = true
+    comment.save
   end
 end
 

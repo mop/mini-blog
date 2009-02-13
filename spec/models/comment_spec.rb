@@ -57,3 +57,37 @@ describe Comment, 'xss filtering' do
     @comment.html_text.should_not match(/<script/)
   end
 end
+
+describe Comment, 'spam filtering' do
+  include CommentSpecHelper
+
+  it "should try to detect spam on creation" do
+    spam_stub.should_receive(:spam?).with("textmessage")
+    SpamHelper.stub!(:new).and_return(spam_stub)
+
+    comment = Comment.new(valid_attributes.merge(:text => "textmessage"))
+    comment.save
+  end
+
+  it "should set the spam flag, when spam is reported" do
+    spam_stub.stub!(:spam?).and_return(true)
+    SpamHelper.stub!(:new).and_return(spam_stub)
+
+    comment = Comment.new(valid_attributes)
+    comment.save
+    comment.spam.should be_true
+  end
+
+  it "should not the spam flag, when no spam is reported" do
+    spam_stub.stub!(:spam?).and_return(false)
+    SpamHelper.stub!(:new).and_return(spam_stub)
+
+    comment = Comment.new(valid_attributes)
+    comment.save
+    comment.spam.should be_false
+  end
+
+  def spam_stub
+  	@spam_stub ||= stub("spam_stub")
+  end
+end

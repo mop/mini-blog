@@ -26,6 +26,7 @@ class Comment
 
   # The users shouldn't manually type the time into the comment
   before :create do
+    self.spam = SpamHelper.new.spam?(self.text)
     self.created_at = Time.now
   end
 end
