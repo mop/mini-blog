@@ -10,6 +10,7 @@ class Comment
   property :text,       Text,    :nullable => false
   property :html_text,  Text
   property :created_at, DateTime
+  property :spam,       Boolean, :default => false
 
   # ==== Associations
   belongs_to :entry

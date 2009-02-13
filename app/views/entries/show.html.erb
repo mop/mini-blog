@@ -1,6 +1,6 @@
 <%= partial 'entry', :with => @entry %>
 <div id="comments">
-  <%= partial 'comment', :with => @entry.comments %>
+  <%= partial 'comment', :with => @entry.public_comments(logged_in?) %>
   <br />
   <br />
   <%= error_messages_for :comment %>

@@ -3,6 +3,11 @@
   <h4><%= comment_title(comment) %></h4>
   <%= comment.html_text %>
   <% admin do %>
+    <%= form_for(comment, :action => url(:entry_comment, comment.entry_id, comment.id), :class => "comment_form") do %>
+      <%= check_box :spam, :label => "Spam" %>
+      <br style="clear: both;"/>
+      <%= submit 'Update' %>
+    <% end =%>
     <a 
       id="commment_<%= comment.id %>_edit" 
       href="<%= url(:edit_entry_comment, comment.entry_id, comment.id) %>"

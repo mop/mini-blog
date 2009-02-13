@@ -59,6 +59,25 @@ class Entry
     Entry.all(:order => [:created_at.desc], :limit => 10)
   end
 
+  # Returns a list of comments, which are per default not spam
+  #
+  # ==== Parameters
+  # display_spam<Boolean>:: 
+  #   Flag which indicates whether spammy comments should be displayed or not
+  #
+  # ==== Returns
+  # Array[Comment]::
+  #   A list of comments is returned, which are not spam per default
+  # ---
+  # @public
+  def public_comments(display_spam=false)
+    if display_spam
+      self.comments
+    else
+      self.comments.all(:spam => false)
+    end
+  end
+
   private
   # Groups the sorted_array by the given block
   #

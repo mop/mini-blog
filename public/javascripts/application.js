@@ -134,6 +134,8 @@ function insert_preview(elem) {
 }
 
 function ajaxify_create(elem) {
+  var f = $$('#comments form').first();
+  if (f.getAttribute('class') == 'comment_form') return;
   insert_preview(elem);
   Event.observe(elem, 'click', function(e) {
     var form = $$('#comments form')[0];
@@ -152,6 +154,27 @@ function ajaxify_create(elem) {
     Event.stop(e);
     return false;
   })
+}
+
+function ajaxify_check_box(form) {
+  $(form).select('input[type="submit"]').each(function(e) {
+    e.hide();
+  });
+
+  var link = form.getAttribute('action');
+  $(form).select('input[type="checkbox"]').each(function(e) {
+    Event.observe(e, 'click', function(ev) {
+      var content = Form.serialize(form);
+      new Ajax.Request(form.getAttribute('action') + '.js', {
+        method: 'put', 
+        parameters: content, 
+        evalJS: false,
+        onSuccess: function(result) {
+          new Effect.Highlight(form);
+        }
+      });
+    });
+  });
 }
 
 Event.observe(window, 'load', function() {
@@ -175,5 +198,6 @@ Event.observe(window, 'load', function() {
 
   $$('#comments input[type="submit"]').each(ajaxify_create);
   $$('#comments a').each(ajaxify_edit);
+  $$('.comment_form').each(ajaxify_check_box);
 });
 
