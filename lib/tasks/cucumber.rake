@@ -2,7 +2,7 @@ require 'cucumber/rake/task'
 
 cucumber_options = proc do |t|
   #t.binary        = Merb.root / 'bin' / 'cucumber'
-  t.cucumber_opts = "--format pretty"
+  t.cucumber_opts = "--format pretty --require features/env.rb"
 end
 
 Cucumber::Rake::Task.new(:features, &cucumber_options)
