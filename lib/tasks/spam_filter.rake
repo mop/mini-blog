@@ -18,4 +18,9 @@ namespace :spam do
     	f.write(bayes.dump)
     end
   end
+
+  desc "Deletes the bayes spam database"
+  task :clear do 
+    FileUtils.rm(bayes_file) rescue nil
+  end
 end

@@ -14,7 +14,7 @@ namespace :merb_cucumber do
 end
 
 
-dependencies = ['merb_cucumber:test_env', 'db:automigrate']
+dependencies = ['merb_cucumber:test_env', 'db:automigrate', 'spam:clear']
 task :features => dependencies
 task :feature  => dependencies
 

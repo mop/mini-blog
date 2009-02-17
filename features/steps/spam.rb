@@ -17,7 +17,7 @@ Given /^a logged in user$/ do
 end
 
 Given /^some spammy comments$/ do 
-	Comment.all.destroy!
+	Comment.auto_migrate!
   @comments = (1..4).map do |i|
     Comment.create(
       :entry_id   => @entry.id,
@@ -27,11 +27,15 @@ Given /^some spammy comments$/ do
     )
   end
 
-  ids = [2, 4]
-  cs = Comment.all(:id => ids)
-  cs.each do |comment|
-  	comment.spam = true
-    comment.save
+  spam_state = { 
+    1 => false,
+    2 => true,
+    3 => false,
+    4 => true
+  }.each do |id, state|
+  	c = Comment.get(id)
+    c.spam = state
+    c.save
   end
 end
 
